@@ -1,15 +1,29 @@
 # ANGANGBOT
 基于小派萌和NoneBot2修改
 
-# Report
 
-Issue for sure
+## | 插件：
+nonebot-plugin-status：https://github.com/cscs181/QQ-GitHub-Bot/tree/master/src/plugins/nonebot_plugin_status
 
-QQ:77139032
+NoneBot Plugin R6s：https://github.com/abrahum/nonebot_plugin_r6s
 
-mail:angjustin@163.com
+nonebot-plugin-autohelp：https://github.com/ffreemt/nonebot-plugin-autohelp
 
-bilibili:ANGJustinl
+nonebot_plugin_setu4:https://github.com/Special-Week/nonebot_plugin_setu4
+
+nonebot-bison:https://github.com/felinae98/nonebot-bison
+
+nonebot-plugin-drawer:https://github.com/CrazyBoyM/nonebot-plugin-drawer
+
+nonebot_plugin_weather_lite:https://github.com/zjkwdy/nonebot_plugin_weather_lite
+
+60s读世界:https://github.com/bingganhe123/60s-
+
+## | 引用:
+Nonebot2                  https://github.com/nonebot/nonebot2
+
+小派蒙|LittlePaimon       https://github.com/nonebot/nonebot2
+
 
 # Command
 [nonebot-plugin-status]
@@ -104,27 +118,18 @@ bilibili:ANGJustinl
         read_inform_time=[{"HOUR":9,"MINUTE":1}] #在输入时间的时候 不要 以0开头如{"HOUR":06,"MINUTE":08}是错误的}
         ~~不要复制tab~~
 
-## | 插件：
-nonebot-plugin-status：https://github.com/cscs181/QQ-GitHub-Bot/tree/master/src/plugins/nonebot_plugin_status
 
-NoneBot Plugin R6s：https://github.com/abrahum/nonebot_plugin_r6s
+# Report
 
-nonebot-plugin-autohelp：https://github.com/ffreemt/nonebot-plugin-autohelp
+Issue for sure
 
-nonebot_plugin_setu4:https://github.com/Special-Week/nonebot_plugin_setu4
+QQ:77139032
 
-nonebot-bison:https://github.com/felinae98/nonebot-bison
+mail:angjustin@163.com
 
-nonebot-plugin-drawer:https://github.com/CrazyBoyM/nonebot-plugin-drawer
+bilibili:ANGJustinl
 
-nonebot_plugin_weather_lite:https://github.com/zjkwdy/nonebot_plugin_weather_lite
 
-60s读世界:https://github.com/bingganhe123/60s-
-
-## | 引用:
-Nonebot2                  https://github.com/nonebot/nonebot2
-
-小派蒙|LittlePaimon       https://github.com/nonebot/nonebot2
 
 
 
