@@ -19,6 +19,8 @@ nonebot_plugin_setu4:https://github.com/Special-Week/nonebot_plugin_setu4
 
 nonebot-bison:https://github.com/felinae98/nonebot-bison
 
+nonebot-plugin-drawer:https://github.com/CrazyBoyM/nonebot-plugin-drawer
+
 
 
 ## | 引用:
