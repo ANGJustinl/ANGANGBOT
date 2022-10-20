@@ -1,8 +1,15 @@
 # ANGANGBOT
 基于小派萌和NoneBot2修改
 
+# Report
 
+Issue for sure
 
+QQ:77139032
+
+mail:angjustin@163.com
+
+bilibili:ANGJustinl
 
 # Command
 [nonebot-plugin-status]
