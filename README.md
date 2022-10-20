@@ -12,9 +12,10 @@
 
 [noneBot_plugin_R6s]
     Rainbow Six Siege Players Searcher For Nonebot2:
+    
         指令	         别名	         可接受参数	         功能
 
-        r6s	         彩六，彩虹六号，r6	         昵称	         查询玩家基本信息
+        r6s	         彩虹六号，r6	         昵称	         查询玩家基本信息
 
         r6spro	         r6pro，R6pro	         昵称	         查询玩家进阶信息
 
