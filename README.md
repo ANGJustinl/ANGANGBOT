@@ -15,9 +15,9 @@
 
 推荐使用powershell + nb-cil脚手架
 
-    Ⅰ.在项目的根目录（即 **bot.py** 文件所在的位置)按下 Shift + 右键，点击【在此处打开 PowerShell 窗口】
+    Ⅰ.在项目的根目录（即 <strong>bot.py</strong> 文件所在的位置)按下 Shift + 右键，点击【在此处打开 PowerShell 窗口】
     
-    Ⅱ. __pip install -r requirements.txt__
+    Ⅱ. <strong>pip install -r requirements.txt</strong>
 
 3.修改[.env.prod]配置文件
     
@@ -37,7 +37,7 @@
 
 4.启动bot
 
-        __舞萌dx插件需额外下载src文件夹进行替换__
+        <strong>舞萌dx插件需额外下载src文件夹进行替换</strong>
         
         > 资源文件仅供学习交流使用，请自觉在下载 24 小时内删除资源文件。
 
@@ -214,7 +214,7 @@ mai bot                   https://github.com/Diving-Fish/mai-bot
         read_qq_friends=[12345678910] #设定要发送的QQ好友
         read_qq_groups=[123456789,123456789,123456789] #设定要发送的群
         read_inform_time=[{"HOUR":9,"MINUTE":1}] #在输入时间的时候 不要 以0开头如{"HOUR":06,"MINUTE":08}是错误的}
-        ~~不要复制tab~~
+        
 
 
 # 反馈
