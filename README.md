@@ -8,21 +8,22 @@
 [nonebot-plugin-status]
     ✨ NoneBot 服务器状态（CPU, Memory, Disk Usage）查看插件✨:
         向机器人发送戳一戳表情
-        双击机器人头像戳一戳]
+        双击机器人头像戳一戳
 
 [noneBot_plugin_R6s]
     Rainbow Six Siege Players Searcher For Nonebot2:
-        指令	         别名	            可接受参数	         功能
+    
+        指令	         别名	         可接受参数	         功能
 
-        r6s	        彩六，彩虹六号，r6         昵称	              查询玩家基本信息
+        r6s	               彩虹六号，r6	         昵称	         查询玩家基本信息
 
-        r6spro	    r6pro，R6pro	         昵称	            查询玩家进阶信息
+        r6spro	         r6pro，R6pro	         昵称	         查询玩家进阶信息
 
-        r6sops	    r6ops，R6ops	         昵称	            查询玩家干员信息
+        r6sops	         r6ops，R6ops	         昵称	         查询玩家干员信息
 
-        r6sp	    r6p，R6p	             昵称	            查询玩家 近期对战 历史段位信息
+        r6sp	         r6p，R6p	         昵称	         查询玩家 近期对战 历史段位信息
 
-        r6sset	    r6set，R6set	         昵称	            设置玩家昵称，设置后其余指令可以不带昵称即查询已设置昵称信息
+        r6sset	         r6set，R6set	         昵称	         设置玩家昵称，设置后其余指令可以不带昵称即查询已设置昵称信息
 
 [nonebot_plugin_setu4]
     内置数据库的setu插件:
@@ -66,20 +67,20 @@
 
                 3.支持查询全球各种地区。例如莫斯科什么的都可以。}
 
-            天气 城市名(可选，如不给出机器人会提示获取)
+            "天气 城市名"(可选，如不给出机器人会提示获取)
 
-            天气 城市名_format=v2
+            "天气 城市名_format=v2"
 
-            天气 城市名_format=v3
+            "天气 城市名_format=v3"
 
             指定语言:
-                天气 城市名_lang=语言 语言可选于：
+                "天气 城市名_lang=语言" 语言可选于：
 
                 am ar af be bn ca da de el et fr fa hi hu ia id it lt mg nb nl oc pl pt-br ro ru ta tr th uk vi zh-cn zh-tw
 
             甚至支持看月相：
 
-                天气 Moon
+                "天气 Moon"
 
             更多用法请参考wttr.in的文档！
                 地址：https://github.com/chubin/wttr.in
@@ -127,4 +128,3 @@ Nonebot2                  https://github.com/nonebot/nonebot2
 
 ## | TODO:
 - [ ] Steam_asf的bot进行qq控制 <img src="https://progress-bar.dev/0/" alt="bar">
-
