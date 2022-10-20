@@ -9,12 +9,17 @@
 
 建议您至少拥有一定的编程基础之后再尝试使用本工具。
 
+1. 安装 Python
 
+2.安装依赖
 
+推荐使用powershell + nb-cil脚手架
 
+    Ⅰ.在项目的根目录（即 bot.py）文件所在的位置按下 Shift + 右键，点击【在此处打开 PowerShell 窗口】
+    
+    Ⅱ. pip install -r requirements.txt
 
-
-5.修改[.env.prod]配置文件第4-6行
+3.修改[.env.prod]配置文件
     
     HOST=127.0.0.1 # Nonebot监听的IP-----1
     
@@ -30,9 +35,11 @@
     
     COMMAND_SEP=[" "] # 命令分隔符-----7
 
-6.启动bot
+4.启动bot
 
         舞萌dx插件需额外下载src文件夹进行替换
+        
+        |资源文件仅供学习交流使用，请自觉在下载 24 小时内删除资源文件。
 
         在运行代码之前，您需要从此链接https://www.diving-fish.com/maibot/static.zip
 
@@ -40,9 +47,54 @@
 
 推荐使用powershell + nb-cil脚手架
 
-    cd [bot.py所在路径]
+    Ⅰ.您可以直接在项目的根目录（即 bot.py）文件所在的位置按下 Shift + 右键，点击【在此处打开 PowerShell 窗口】
 
-    nb run
+    Ⅱ.nb run
+
+运行项目。如果输出如下所示的内容，代表运行成功：(由于第一次安装不加载配置文件,或许会略有不同,不报错就是没问题的)
+
+    10-20 16:40:30 [SUCCESS] nonebot | NoneBot is initializing...
+    10-20 16:40:30 [INFO] nonebot | Current Env: prod
+    [I 221020 16:40:31 nonebot_plugin_autohelp:45] Loaded plugins: ['nonebot_plugin_autohelp']
+    10-20 16:40:31 [SUCCESS] nonebot | Succeeded to import "nonebot_plugin_autohelp"
+    10-20 16:40:31 [SUCCESS] nonebot | Succeeded to import "nonebot_plugin_weather_lite"
+    10-20 16:40:31 [SUCCESS] nonebot | Succeeded to import "nonebot_plugin_setu4"
+    10-20 16:40:32 [SUCCESS] nonebot | Succeeded to import "maimaidx"
+    10-20 16:40:32 [SUCCESS] nonebot | Succeeded to import "nonebot_plugin_status"
+    10-20 16:40:32 [SUCCESS] nonebot | Succeeded to import "nonebot_plugin_couplets"
+    10-20 16:40:32 [SUCCESS] nonebot | Succeeded to import "nonebot_plugin_r6s"
+    10-20 16:40:32 [SUCCESS] nonebot | Succeeded to import "nonebot_plugin_drawer"
+    10-20 16:40:32 [SUCCESS] nonebot | Succeeded to import "public"
+    10-20 16:40:32 [SUCCESS] nonebot | Succeeded to import "auto_agree"
+    10-20 16:40:32 [SUCCESS] nonebot | Succeeded to import "nonebot_plugin_hammer_nbnhhsh"
+
+    10-20 16:40:32 [SUCCESS] nonebot | Running NoneBot...
+    10-20 16:40:32 [INFO] uvicorn | Started server process [16676]
+    10-20 16:40:32 [INFO] uvicorn | Waiting for application startup.
+    10-20 16:40:32 [INFO] uvicorn | Application startup complete.
+    10-20 16:40:32 [INFO] uvicorn | Uvicorn running on http://127.0.0.1:10219 (Press CTRL+C to quit)
+    
+    
+5. 连接 CQ-HTTP
+
+前往 https://github.com/Mrs4s/go-cqhttp > Releases，下载适合自己操作系统的可执行文件。 go-cqhttp 在初次启动时会询问代理方式，选择反向 websocket 代理即可。
+之后用任何文本编辑器打开config.yml文件，设置反向 ws 地址、上报方式：
+
+    message:
+      post-format: array
+
+    servers:
+      - ws-reverse:
+          universal: ws://127.0.0.1:10219/onebot/v11/ws
+          
+然后设置您的 QQ 号和密码。您也可以不设置密码，选择扫码登陆的方式。
+
+登陆成功后，后台应该会发送一条类似的信息：
+
+    10-20 16:40:32 [INFO] nonebot | WebSocket Connection from CQHTTP Bot 114514 Accepted!
+    
+至此，您可以和对应的 QQ 号聊天并使用 mai bot 的所有功能了。
+
 
 
 ## | 插件：
