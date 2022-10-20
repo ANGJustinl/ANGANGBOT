@@ -15,9 +15,9 @@
 
 推荐使用powershell + nb-cil脚手架
 
-    Ⅰ.在项目的根目录（即 bot.py）文件所在的位置按下 Shift + 右键，点击【在此处打开 PowerShell 窗口】
+    Ⅰ.在项目的根目录（即 **bot.py** 文件所在的位置)按下 Shift + 右键，点击【在此处打开 PowerShell 窗口】
     
-    Ⅱ. pip install -r requirements.txt
+    Ⅱ. __pip install -r requirements.txt__
 
 3.修改[.env.prod]配置文件
     
@@ -37,21 +37,21 @@
 
 4.启动bot
 
-        舞萌dx插件需额外下载src文件夹进行替换
+        __舞萌dx插件需额外下载src文件夹进行替换__
         
-        |资源文件仅供学习交流使用，请自觉在下载 24 小时内删除资源文件。
+        > 资源文件仅供学习交流使用，请自觉在下载 24 小时内删除资源文件。
 
-        在运行代码之前，您需要从此链接https://www.diving-fish.com/maibot/static.zip
+        > 在运行代码之前，您需要从此链接https://www.diving-fish.com/maibot/static.zip
 
-        下载资源文件并解压到src文件夹中
+        > 下载资源文件并解压到src文件夹中
 
 推荐使用powershell + nb-cil脚手架
 
-    Ⅰ.您可以直接在项目的根目录（即 bot.py）文件所在的位置按下 Shift + 右键，点击【在此处打开 PowerShell 窗口】
+    Ⅰ.您可以直接在项目的根目录（即 **bot.py** 文件所在的位置)按下 Shift + 右键，点击【在此处打开 PowerShell 窗口】
 
     Ⅱ.nb run
 
-运行项目。如果输出如下所示的内容，代表运行成功：(由于第一次安装不加载配置文件,或许会略有不同,不报错就是没问题的)
+运行项目。如果输出如下所示的内容，代表运行成功：>(由于第一次安装不加载配置文件,或许会略有不同,不报错就是没问题的)
 
     10-20 16:40:30 [SUCCESS] nonebot | NoneBot is initializing...
     10-20 16:40:30 [INFO] nonebot | Current Env: prod
@@ -201,7 +201,10 @@ mai bot                   https://github.com/Diving-Fish/mai-bot
             更多用法请参考wttr.in的文档！
                 地址：https://github.com/chubin/wttr.in
 
-[60s读世界]
+---
+
+
+>[60s读世界]失效未启用
     定时向指定群或列表好友发送每日60s读世界
         注：python3.9以上版本才能正常使用
 
