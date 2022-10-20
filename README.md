@@ -15,7 +15,7 @@
 
 推荐使用powershell + nb-cil脚手架
 
-    Ⅰ.在项目的根目录（即 <strong>bot.py</strong> 文件所在的位置)按下 Shift + 右键，点击【在此处打开 PowerShell 窗口】
+    Ⅰ.在项目的根目录（即 bot.py 文件所在的位置)按下 Shift + 右键，点击【在此处打开 PowerShell 窗口】
     
     Ⅱ. <strong>pip install -r requirements.txt</strong>
 
@@ -37,7 +37,7 @@
 
 4.启动bot
 
-        <strong>舞萌dx插件需额外下载src文件夹进行替换</strong>
+        > 舞萌dx插件需额外下载src文件夹进行替换
         
         > 资源文件仅供学习交流使用，请自觉在下载 24 小时内删除资源文件。
 
@@ -47,7 +47,7 @@
 
 推荐使用powershell + nb-cil脚手架
 
-    Ⅰ.您可以直接在项目的根目录（即 **bot.py** 文件所在的位置)按下 Shift + 右键，点击【在此处打开 PowerShell 窗口】
+    Ⅰ.您可以直接在项目的根目录（即 bot.py 文件所在的位置)按下 Shift + 右键，点击【在此处打开 PowerShell 窗口】
 
     Ⅱ.nb run
 
