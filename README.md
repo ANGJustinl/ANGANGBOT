@@ -32,6 +32,12 @@
 
 6.启动bot
 
+{舞萌dx插件需额外下载src文件夹进行替换
+
+在运行代码之前，您需要从此链接https://www.diving-fish.com/maibot/static.zip
+
+下载资源文件并解压到src文件夹中}
+
 推荐使用powershell + nb-cil脚手架
 
     cd [bot.py所在路径]
