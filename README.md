@@ -21,7 +21,7 @@ nonebot-bison:https://github.com/felinae98/nonebot-bison
 
 nonebot-plugin-drawer:https://github.com/CrazyBoyM/nonebot-plugin-drawer
 
-
+nonebot_plugin_weather_lite:https://github.com/zjkwdy/nonebot_plugin_weather_lite
 
 ## | 引用:
 Nonebot2                  https://github.com/nonebot/nonebot2
