@@ -14,7 +14,30 @@
 
 
 
-5.修改.env.prod配置文件第4-6行
+5.修改[.env.prod]配置文件第4-6行
+    
+    HOST=127.0.0.1 # Nonebot监听的IP-----1
+    
+    PORT=10219 # Nonebot监听的端口-----2
+    
+    LOG_LEVEL=INFO # 日志等级-----3
+    
+    SUPERUSERS=["12345678"] # 超级用户,修改12345678为你bot管理者的qq号-----4
+    
+    NICKNAME=["aabt"] # 机器人的昵称-----5
+    
+    COMMAND_START=[""] # 命令前缀,根据需要自行修改-----6
+    
+    COMMAND_SEP=[" "] # 命令分隔符-----7
+
+6.启动bot
+
+推荐使用powershell + nb-cil脚手架
+
+    cd [bot.py所在路径]
+
+    nb run
+
 
 舞萌dx插件需额外下载src文件夹进行替换
 
