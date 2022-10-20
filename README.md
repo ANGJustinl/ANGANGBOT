@@ -25,7 +25,7 @@ Nonebot2                  https://github.com/nonebot/nonebot2
 小派蒙|LittlePaimon       https://github.com/nonebot/nonebot2
 
 
-# Command
+# 命令
 [nonebot-plugin-status]
     ✨ NoneBot 服务器状态（CPU, Memory, Disk Usage）查看插件✨:
         向机器人发送戳一戳表情
@@ -119,7 +119,7 @@ Nonebot2                  https://github.com/nonebot/nonebot2
         ~~不要复制tab~~
 
 
-# Report
+# 反馈
 
 Issue for sure
 
@@ -138,5 +138,5 @@ bilibili:ANGJustinl
 
 
 
-## | TODO:
+## | 目标:
 - [ ] Steam_asf的bot进行qq控制 <img src="https://progress-bar.dev/0/" alt="bar">
