@@ -234,4 +234,4 @@ bilibili:ANGJustinl
 
 
 ## | 目标:
-- [ ] Steam_asf的bot进行qq控制 <img src="https://progress-bar.dev/0/" alt="bar">
+- [ ] Steam_asf的bot进行qq控制 <img src="https://progress-bar.dev/5/" alt="bar">
