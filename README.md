@@ -23,6 +23,8 @@ nonebot-plugin-drawer:https://github.com/CrazyBoyM/nonebot-plugin-drawer
 
 nonebot_plugin_weather_lite:https://github.com/zjkwdy/nonebot_plugin_weather_lite
 
+60s读世界:https://github.com/bingganhe123/60s-
+
 ## | 引用:
 Nonebot2                  https://github.com/nonebot/nonebot2
 
