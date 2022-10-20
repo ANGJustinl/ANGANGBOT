@@ -12,17 +12,17 @@
 
 [noneBot_plugin_R6s]
     Rainbow Six Siege Players Searcher For Nonebot2:
-        指令	         别名	            可接受参数	         功能
+        指令	         别名	         可接受参数	         功能
 
-        r6s	        彩六，彩虹六号，r6         昵称	              查询玩家基本信息
+        r6s	         彩六，彩虹六号，r6	         昵称	         查询玩家基本信息
 
-        r6spro	    r6pro，R6pro	         昵称	            查询玩家进阶信息
+        r6spro	         r6pro，R6pro	         昵称	         查询玩家进阶信息
 
-        r6sops	    r6ops，R6ops	         昵称	            查询玩家干员信息
+        r6sops	         r6ops，R6ops	         昵称	         查询玩家干员信息
 
-        r6sp	    r6p，R6p	             昵称	            查询玩家 近期对战 历史段位信息
+        r6sp	         r6p，R6p	         昵称	         查询玩家 近期对战 历史段位信息
 
-        r6sset	    r6set，R6set	         昵称	            设置玩家昵称，设置后其余指令可以不带昵称即查询已设置昵称信息
+        r6sset	         r6set，R6set	         昵称	         设置玩家昵称，设置后其余指令可以不带昵称即查询已设置昵称信息
 
 [nonebot_plugin_setu4]
     内置数据库的setu插件:
