@@ -10,7 +10,9 @@
 
 舞萌dx插件需额外下载src文件夹进行替换
 
-在运行代码之前，您需要从此链接https://www.diving-fish.com/maibot/static.zip下载资源文件并解压到src文件夹中
+在运行代码之前，您需要从此链接https://www.diving-fish.com/maibot/static.zip
+
+下载资源文件并解压到src文件夹中
 
 ## | 插件：
 nonebot-plugin-status：https://github.com/cscs181/QQ-GitHub-Bot/tree/master/src/plugins/nonebot_plugin_status
