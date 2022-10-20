@@ -1,6 +1,16 @@
 # ANGANGBOT
 基于小派萌和NoneBot2修改
 
+## | 部署
+
+此 README 提供了最低程度的 mai bot 教程与支持。
+
+建议您至少拥有一定的编程基础之后再尝试使用本工具。
+
+
+舞萌dx插件需额外下载src文件夹进行替换
+
+在运行代码之前，您需要从此链接https://www.diving-fish.com/maibot/static.zip下载资源文件并解压到src文件夹中
 
 ## | 插件：
 nonebot-plugin-status：https://github.com/cscs181/QQ-GitHub-Bot/tree/master/src/plugins/nonebot_plugin_status
@@ -17,12 +27,12 @@ nonebot-plugin-drawer:https://github.com/CrazyBoyM/nonebot-plugin-drawer
 
 nonebot_plugin_weather_lite:https://github.com/zjkwdy/nonebot_plugin_weather_lite
 
-60s读世界:https://github.com/bingganhe123/60s-
-
 ## | 引用:
 Nonebot2                  https://github.com/nonebot/nonebot2
 
 小派蒙|LittlePaimon       https://github.com/nonebot/nonebot2
+
+mai bot                   https://github.com/Diving-Fish/mai-bot
 
 
 # 命令
