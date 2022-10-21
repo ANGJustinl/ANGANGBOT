@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/ANGJustinl/ANGANGBOT"><img src="https://github.com/ANGJustinl/ANGANGBOT/blob/main/LOGO.png" width="200" height="200" alt="aabt"></a>
+  <a href="https://github.com/ANGJustinl/ANGANGBOT"><img src="https://github.com/ANGJustinl/ANGANGBOT/blob/main/repository-open-graph-template.png" width="3000" height="400" alt="aabt"></a>
 </p>
 
 <div align="center">
