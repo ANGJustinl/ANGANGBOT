@@ -1,6 +1,17 @@
-<h1> ANGANGBOT </h1>
-基于小派萌和NoneBot2修改
+<div align="center">
 
+# ANGANGBOT
+
+✨ 基于小派萌和NoneBot2修改 ✨
+</div>
+
+<p align="center">
+  <a>
+  <img src="https://img.shields.io/badge/python-3.10-blue.svg" alt="python">
+  <img src="https://img.shields.io/badge/Onebot-v11-lightgrey" alt="onebot11">
+  <img src="https://img.shields.io/badge/nonebot-2.0.0b4-orange" alt="nonebot2">
+  </a>
+</p>
 ## | 部署
 
 至少需要Python3.9及以上版本，可通过python -V或python3 -V查看版本号
