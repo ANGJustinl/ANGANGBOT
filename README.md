@@ -108,7 +108,11 @@
 
     10-20 16:40:32 [INFO] nonebot | WebSocket Connection from CQHTTP Bot 114514 Accepted!
     
-至此，您可以和对应的 QQ 号聊天并使用 angangbot 的所有功能了。
+至此，您可以和对应的 QQ 号聊天并使用 angangbot 的基础功能了。
+
+##| 插件：
+
+对应插件的功能可以自己查询对应插件有关安装方法,此处先不予整合
 
 
 
@@ -186,6 +190,8 @@ mai bot                   https://github.com/Diving-Fish/mai-bot
         触发菜单命令：画画帮助 当前支持 古风 油画 水彩画 卡通画 二次元 浮世绘 蒸汽波艺术 low poly 像素风格 概念艺术 未来主义 赛博朋克 写实风格 洛丽塔风格 巴洛克风格 超现实主义 主要擅长风景写意画，请尽量给定比较明确的意象
 
         如：油画 江上落日与晚霞
+        
+        「公式」= 图片主体，细节词，修饰词
 
         api申请https://wenxin.baidu.com/younger/apiDetail?id=20008
 
@@ -241,7 +247,7 @@ QQ:77139032
 
 mail:angjustin@163.com
 
-bilibili:ANGJustinl
+bilibili:https://space.bilibili.com/213993950?spm_id_from=333.1007.0.0
 
 
 
