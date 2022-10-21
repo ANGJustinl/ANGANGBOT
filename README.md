@@ -93,7 +93,7 @@
 
     10-20 16:40:32 [INFO] nonebot | WebSocket Connection from CQHTTP Bot 114514 Accepted!
     
-至此，您可以和对应的 QQ 号聊天并使用 mai bot 的所有功能了。
+至此，您可以和对应的 QQ 号聊天并使用 angangbot 的所有功能了。
 
 
 
