@@ -26,7 +26,7 @@
 
 1. 安装 Python
 
-2.安装依赖
+2. 安装依赖
 
 推荐使用powershell + nb-cil脚手架
 
@@ -34,7 +34,7 @@
     
     Ⅱ. pip install -r requirements.txt
 
-3.修改[.env.prod]配置文件
+3.1 修改[.env.prod]配置文件
     
     HOST=127.0.0.1 # Nonebot监听的IP-----1
     
@@ -50,7 +50,18 @@
     
     COMMAND_SEP=[" "] # 命令分隔符-----7
 
-4.启动bot
+3.2 修改[.env]配置文件 22-25行
+
+    #WENXIN
+    
+    
+    wenxin_ak = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"这行填入文心模型的api
+    
+    wenxin_sk = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"这行填入文心模型的密钥
+    
+
+
+4. 启动bot
 
         > 舞萌dx插件需额外下载src文件夹进行替换
         
@@ -109,6 +120,7 @@
     10-20 16:40:32 [INFO] nonebot | WebSocket Connection from CQHTTP Bot 114514 Accepted!
     
 至此，您可以和对应的 QQ 号聊天并使用 angangbot 的基础功能了。
+
 
 ## | 插件：
 
