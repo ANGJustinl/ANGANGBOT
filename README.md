@@ -18,9 +18,9 @@
 </p>
 ## | 部署
 
-至少需要Python3.9及以上版本，可通过python -V或python3 -V查看版本号
+至少需要Python3.9及以上版本(推荐3.10)，可通过python -V或python3 -V查看版本号
 
-此 README 提供了最低程度的 mai bot 教程与支持。
+此 README 提供了最低程度的基于 nonebot 进行安装的教程与支持。
 
 建议您至少拥有一定的编程基础之后再尝试使用本工具。
 
