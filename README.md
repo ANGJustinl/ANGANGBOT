@@ -2,7 +2,7 @@
   <a href="https://github.com/ANGJustinl/ANGANGBOT"><img src="https://github.com/ANGJustinl/ANGANGBOT/blob/main/repository-open-graph-template.png" width="800" height="400" alt="aabt"></a>
 </p>
 
-![ANGANGBOT](https://socialify.git.ci/ANGJustinl/ANGANGBOT/image?description=1&font=Raleway&forks=1&language=1&logo=https%3A%2F%2Fgithub.com%2FANGJustinl%2FANGANGBOT%2Fblob%2Fmain%2FLOGO.png&owner=1&pattern=Overlapping%20Hexagons&stargazers=1&theme=Light)
+
 
 <div align="center">
 
@@ -18,7 +18,7 @@
   <img src="https://img.shields.io/badge/nonebot-2.0.0b4-orange" alt="nonebot2">
   </a>
 </p>
-## | 部署
+## | 🚀部署
 
 至少需要Python3.9及以上版本(推荐3.10)，可通过python -V或python3 -V查看版本号
 
@@ -154,6 +154,8 @@ Nonebot2                  https://github.com/nonebot/nonebot2
 mai bot                   https://github.com/Diving-Fish/mai-bot
 
 
+
+
 # 命令
 [nonebot-plugin-status]
     ✨ NoneBot 服务器状态（CPU, Memory, Disk Usage）查看插件✨:
@@ -253,11 +255,13 @@ mai bot                   https://github.com/Diving-Fish/mai-bot
         
 
 
-# 反馈
+## | 👥反馈与交流
 
 Issue for sure
 
 QQ:77139032
+
+群聊:696748432
 
 mail:angjustin@163.com
 
