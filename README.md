@@ -146,6 +146,11 @@ nonebot-plugin-drawer:https://github.com/CrazyBoyM/nonebot-plugin-drawer
 nonebot_plugin_weather_lite:https://github.com/zjkwdy/nonebot_plugin_weather_lite
 
 Nonebot Plugin Hammer Nbnhhsh:https://github.com/ArgonarioD/nonebot-plugin-hammer-nbnhhsh
+
+nonebot-plugin-treehelp:https://github.com/he0119/nonebot-plugin-treehelp
+
+nonebot_plugin_fortune:https://github.com/MinatoAquaCrews/nonebot_plugin_fortune
+
 ## | 引用:
 Nonebot2                  https://github.com/nonebot/nonebot2
 
@@ -239,6 +244,26 @@ mai bot                   https://github.com/Diving-Fish/mai-bot
             更多用法请参考wttr.in的文档！
                 地址：https://github.com/chubin/wttr.in
 
+[nonebot_plugin_fortune]
+    
+    占卜一下你的今日运势！🎉
+    
+        一般抽签：今日运势、抽签、运势；
+
+        指定主题抽签：[xx抽签]，例如：pcr抽签、holo抽签、碧蓝抽签；
+
+        [群管或群主或超管] 配置抽签主题：设置[原神/pcr/东方/vtb/xxx]签：设置群抽签主题；
+
+        重置（抽签）主题：设置群抽签主题为随机；
+
+        抽签设置：查看当前群抽签主题的配置；
+
+        [超管] 刷新抽签：全局即刻刷新抽签，防止过0点未刷新；
+
+        今日运势帮助：显示插件帮助文案；
+
+        查看（抽签）主题：显示当前已启用主题；
+        
 ---
 
 
