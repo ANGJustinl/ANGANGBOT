@@ -17,7 +17,7 @@
 
     Ⅰ.在项目的根目录（即 bot.py 文件所在的位置)按下 Shift + 右键，点击【在此处打开 PowerShell 窗口】
     
-    Ⅱ. <strong>pip install -r requirements.txt</strong>
+    Ⅱ. pip install -r requirements.txt
 
 3.修改[.env.prod]配置文件
     
