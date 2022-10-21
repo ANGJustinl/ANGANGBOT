@@ -2,6 +2,8 @@
   <a href="https://github.com/ANGJustinl/ANGANGBOT"><img src="https://github.com/ANGJustinl/ANGANGBOT/blob/main/repository-open-graph-template.png" width="800" height="400" alt="aabt"></a>
 </p>
 
+![ANGANGBOT](https://socialify.git.ci/ANGJustinl/ANGANGBOT/image?description=1&font=Raleway&forks=1&language=1&logo=https%3A%2F%2Fgithub.com%2FANGJustinl%2FANGANGBOT%2Fblob%2Fmain%2FLOGO.png&owner=1&pattern=Overlapping%20Hexagons&stargazers=1&theme=Light)
+
 <div align="center">
 
 # ANGANGBOT
