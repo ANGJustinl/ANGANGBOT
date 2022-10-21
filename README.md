@@ -112,8 +112,7 @@ nonebot-plugin-drawer:https://github.com/CrazyBoyM/nonebot-plugin-drawer
 
 nonebot_plugin_weather_lite:https://github.com/zjkwdy/nonebot_plugin_weather_lite
 
-Nonebot Plugin Hammer Nbnhhsh:https://github.com/ArgonarioD/nonebot-plugin-hammer-nbnhhsh#2-%E4%BD%BF%E7%94%A8%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85%E7%94%A8pip%E4%B8%BE%E4%BE%8B
-
+Nonebot Plugin Hammer Nbnhhsh:https://github.com/ArgonarioD/nonebot-plugin-hammer-nbnhhsh
 ## | 引用:
 Nonebot2                  https://github.com/nonebot/nonebot2
 
