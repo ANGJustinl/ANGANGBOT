@@ -263,6 +263,8 @@ QQ:77139032
 
 群聊:696748432
 
+<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=FNbHsG5x6lb-xPvA3_5pmD2WFXC8cjRp&jump_from=webapi&authKey=Fahw44m3U/fDkxHmgl3AQyoFpciXLgK4XYjnBoBUa2Nnu23i1pfmEmwh0H7lG6pt"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="[ANG]啥呗（悲）餐厅" title="[ANG]啥呗（悲）餐厅"></a>
+
 mail:angjustin@163.com
 
 bilibili:https://space.bilibili.com/213993950?spm_id_from=333.1007.0.0
