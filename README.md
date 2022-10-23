@@ -151,6 +151,8 @@ nonebot-plugin-treehelp:https://github.com/he0119/nonebot-plugin-treehelp
 
 nonebot_plugin_fortune:https://github.com/MinatoAquaCrews/nonebot_plugin_fortune
 
+Apex_Tool APEX英雄QQBot信息查询:https://github.com/AreCie/Apex_Tool
+
 ## | 引用:
 Nonebot2                  https://github.com/nonebot/nonebot2
 
@@ -265,7 +267,16 @@ mai bot                   https://github.com/Diving-Fish/mai-bot
         查看（抽签）主题：显示当前已启用主题；
         
 ---
+[APEX接口功能]
+   **查询地图轮换**：【a地图】
 
+   **查询制造轮换**：【a制造】
+ 
+   **查询猎杀信息**：【a猎杀】
+ 
+   **绑定烂橘子ID**：【a绑定 烂橘子ID】
+ 
+   **查询玩家信息**：【a查询】(这个需先绑定烂橘子ID)、【a查询 烂橘子ID】
 
 >[60s读世界]失效未启用
     定时向指定群或列表好友发送每日60s读世界
