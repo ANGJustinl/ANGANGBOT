@@ -307,12 +307,15 @@ bilibili:https://space.bilibili.com/213993950?spm_id_from=333.1007.0.0
 
 
 
-
-
-
-
-
-
-
+---
+## | 更新记录
+v1.1.6 2022.10.23 重写了help获取帮助命令cv2内容
+v1.1.5 2022.10.22 配置了APEX查分插件，改了部分插件内容
+v1.1.4 2022.10.22 添加舞萌DX插件相关内容
+v1.1.2 2022.10.21 添加了部分插件，优化了requirements.txt内容
+v1.1.0 2022.10.20 上传至git
+v1.0.1 2022.10.19 完成了bot的配置流程
+v1.0.0 2022.10.19 bot初步成型
+---
 ## | 目标:
 - [ ] Steam_asf的bot进行qq控制 <img src="https://progress-bar.dev/5/" alt="bar">
