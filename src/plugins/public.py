@@ -52,6 +52,12 @@ am ar af be bn ca da de el et fr fa hi hu ia id it lt mg nb nl oc pl pt-br ro ru
 今日运势帮助：显示插件帮助文案；
 查看（抽签）主题：显示当前已启用主题；
 
+APEX接口========
+**查询地图轮换**：【a地图】
+**查询制造轮换**：【a制造】
+**查询猎杀信息**：【a猎杀】
+**绑定烂橘子ID**：【a绑定 烂橘子ID】
+**查询玩家信息**：【a查询】(这个需先绑定烂橘子ID)、【a查询 烂橘子ID】
 
 乌蒙DX功能========
 今日舞萌 查看今天的舞萌运势
@@ -62,7 +68,13 @@ XXXmaimaiXXX什么 随机一首歌
 <歌曲别名>是什么歌 查询乐曲别名对应的乐曲
 定数查歌 <定数>  查询定数对应的乐曲
 定数查歌 <定数下限> <定数上限>
-分数线 <难度+歌曲id> <分数线> 详情请输入“分数线 帮助”查看'''
+分数线 <难度+歌曲id> <分数线> 详情请输入“分数线 帮助”查看
+
+ANGAANGBOT POWERED BY NONEBOT2 
+反馈与联系
+群:696748432
+邮箱: angjustin@163.com
+github:https://github.com/ANGJustinl/ANGANGBOT/blob/main/README.md'''
 
     await help.send(Message([
         MessageSegment("image", {
