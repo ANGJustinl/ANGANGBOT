@@ -18,6 +18,9 @@
   <img src="https://img.shields.io/badge/nonebot-2.0.0b4-orange" alt="nonebot2">
   </a>
 </p>
+
+    一切开发旨在学习，请勿用于非法用途
+    
 ## | 🚀部署
 
 ---
