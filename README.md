@@ -16,6 +16,7 @@
   <img src="https://img.shields.io/badge/python-3.10-blue.svg" alt="python">
   <img src="https://img.shields.io/badge/Onebot-v11-lightgrey" alt="onebot11">
   <img src="https://img.shields.io/badge/nonebot-2.0.0b4-orange" alt="nonebot2">
+  [![Github last commit date](https://img.shields.io/github/last-commit/ANGJustinl/ANGANGBOT.svg?label=Updated&logo=github&cacheSeconds=600)]
   </a>
 </p>
 
