@@ -164,6 +164,8 @@ nonebot_plugin_fortune:https://github.com/MinatoAquaCrews/nonebot_plugin_fortune
 
 Apex_Tool APEX英雄QQBot信息查询:https://github.com/AreCie/Apex_Tool
 
+[HarukaBot]https://github.com/SK-415/HarukaBot
+
 ## | 引用:
 Nonebot2                  https://github.com/nonebot/nonebot2
 
@@ -171,7 +173,7 @@ Nonebot2                  https://github.com/nonebot/nonebot2
 
 mai bot                   https://github.com/Diving-Fish/mai-bot
 
-
+HarukaBot                 https://github.com/SK-415/HarukaBot
 
 
 # 命令
@@ -276,7 +278,36 @@ mai bot                   https://github.com/Diving-Fish/mai-bot
         今日运势帮助：显示插件帮助文案；
 
         查看（抽签）主题：显示当前已启用主题；
-        
+
+
+[HarukaBot b站推送]
+
+（请将UID替换为需要操作的B站UID）
+
+关闭全体 UID
+
+开启全体 UID
+
+开启动态 UID
+
+关闭动态 UID
+
+关闭直播 UID
+
+开启直播 UID
+
+关闭权限
+
+开启权限
+
+关注 UID
+
+取关 UID
+
+关注列表
+
+未改配置群聊中请@机器人使用
+
 ---
 [APEX接口功能]
    **查询地图轮换**：【a地图】
