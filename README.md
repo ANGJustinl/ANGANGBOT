@@ -8,7 +8,7 @@
 
 # ANGANGBOT
 
-✨ 基于小派萌和NoneBot2修改 ✨
+✨ 基于NoneBot2的交互bot ✨
 </div>
 
 <p align="center">
