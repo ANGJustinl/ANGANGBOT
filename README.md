@@ -16,9 +16,10 @@
 <img src="https://img.shields.io/badge/python-3.10-blue.svg" alt="python">
 <img src="https://img.shields.io/badge/Onebot-v11-lightgrey" alt="onebot11">
 <img src="https://img.shields.io/badge/nonebot-2.0.0b4-orange" alt="nonebot2">
-<img src="https://img.shields.io/github/last-commit/ANGJustinl/ANGANGBOT.svg?label=Updated&logo=github&cacheSeconds=600" alt="AABT">    
-    
-  
+<img src="https://img.shields.io/github/last-commit/ANGJustinl/ANGANGBOT.svg?label=Updated&logo=github&cacheSeconds=600" alt="AABT">   
+<img src="https://img.shields.io/github/downloads/ANGJustinl/ANGANGBOT/total.svg?label=Downloads&logo=github&cacheSeconds=600" alt="AABT">   
+
+ 
 </p>
 
     一切开发旨在学习，请勿用于非法用途
