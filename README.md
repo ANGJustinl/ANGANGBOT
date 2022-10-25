@@ -19,10 +19,10 @@
 <img src="https://img.shields.io/github/last-commit/ANGJustinl/ANGANGBOT.svg?label=Updated&logo=github&cacheSeconds=600" alt="AABT">   
 <img src="https://img.shields.io/github/downloads/ANGJustinl/ANGANGBOT/total.svg?label=Downloads&logo=github&cacheSeconds=600" alt="AABT">   
 
+![Alt](https://repobeats.axiom.co/api/embed/6a22c5e973a99b3a396f90ccde21ecfc25c0c2b8.svg "Repobeats analytics image")
+
  
 </p>
-
-![Alt](https://repobeats.axiom.co/api/embed/6a22c5e973a99b3a396f90ccde21ecfc25c0c2b8.svg "Repobeats analytics image")
 
     一切开发旨在学习，请勿用于非法用途
     
