@@ -83,13 +83,13 @@
 
 4. 启动bot
 
-        > 舞萌dx插件需额外下载src文件夹进行替换
+    > 舞萌dx插件需额外下载src文件夹进行替换
         
-        > 资源文件仅供学习交流使用，请自觉在下载 24 小时内删除资源文件。
+    > 资源文件仅供学习交流使用，请自觉在下载 24 小时内删除资源文件。
 
-        > 在运行代码之前，您需要从此链接https://www.diving-fish.com/maibot/static.zip
+    > 在运行代码之前，您需要从此链接https://www.diving-fish.com/maibot/static.zip
 
-        > 下载资源文件并解压到src文件夹中
+    > 下载资源文件并解压到src文件夹中
 
 推荐使用powershell + nb-cil脚手架
 
