@@ -289,31 +289,31 @@ HarukaBot                 https://github.com/SK-415/HarukaBot
 
 [HarukaBot b站推送]
 
-（请将UID替换为需要操作的B站UID）
+  （请将UID替换为需要操作的B站UID）
 
-关闭全体 UID
+  关闭全体 UID
 
-开启全体 UID
+  开启全体 UID
 
-开启动态 UID
+  开启动态 UID
 
-关闭动态 UID
+  关闭动态 UID
 
-关闭直播 UID
+  关闭直播 UID
 
-开启直播 UID
+  开启直播 UID
 
-关闭权限
+  关闭权限
 
-开启权限
+  开启权限
 
-关注 UID
+  关注 UID
 
-取关 UID
+  取关 UID
 
-关注列表
+  关注列表
 
-未改配置群聊中请@机器人使用
+  未改配置群聊中请@机器人使用
 
 ---
 [APEX接口功能]
