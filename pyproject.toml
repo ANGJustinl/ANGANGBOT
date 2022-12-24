@@ -30,7 +30,7 @@ pywebio = "^1.6.2"
 jieba = "^0.42.1"
 scipy = "^1.9.1"
 scikit-learn = "^1.1.2"
-shapely = "^1.8.4"
+shapely = "^2.0.0"
 gitpython = "^3.1.27"
 pypinyin = "^0.47.1"
 
