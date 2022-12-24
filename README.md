@@ -70,14 +70,7 @@
     
     COMMAND_SEP=[" "] # 命令分隔符-----7
 
-3.2 修改[.env]配置文件 22-25行
-
-    #WENXIN
     
-    
-    wenxin_ak = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"这行填入文心模型的api
-    
-    wenxin_sk = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"这行填入文心模型的密钥
     
 
 
@@ -151,32 +144,20 @@
 ## | 插件：
 nonebot-plugin-status：https://github.com/cscs181/QQ-GitHub-Bot/tree/master/src/plugins/nonebot_plugin_status
 
-NoneBot Plugin R6s：https://github.com/abrahum/nonebot_plugin_r6s
-
 nonebot-plugin-autohelp：https://github.com/ffreemt/nonebot-plugin-autohelp
 
 nonebot_plugin_setu4:https://github.com/Special-Week/nonebot_plugin_setu4
-
-nonebot-bison:https://github.com/felinae98/nonebot-bison
-
-nonebot-plugin-drawer:https://github.com/CrazyBoyM/nonebot-plugin-drawer
 
 nonebot_plugin_weather_lite:https://github.com/zjkwdy/nonebot_plugin_weather_lite
 
 Nonebot Plugin Hammer Nbnhhsh:https://github.com/ArgonarioD/nonebot-plugin-hammer-nbnhhsh
 
-nonebot-plugin-treehelp:https://github.com/he0119/nonebot-plugin-treehelp
-
 nonebot_plugin_fortune:https://github.com/MinatoAquaCrews/nonebot_plugin_fortune
-
-Apex_Tool APEX英雄QQBot信息查询:https://github.com/AreCie/Apex_Tool
 
 [HarukaBot]https://github.com/SK-415/HarukaBot
 
 ## | 引用:
 Nonebot2                  https://github.com/nonebot/nonebot2
-
-小派蒙|LittlePaimon       https://github.com/nonebot/nonebot2
 
 mai bot                   https://github.com/Diving-Fish/mai-bot
 
@@ -189,20 +170,6 @@ HarukaBot                 https://github.com/SK-415/HarukaBot
         向机器人发送戳一戳表情
         双击机器人头像戳一戳
 
-[noneBot_plugin_R6s]
-    Rainbow Six Siege Players Searcher For Nonebot2:
-    
-        指令	         别名	         可接受参数	         功能
-
-        r6s	               彩虹六号，r6	         昵称	         查询玩家基本信息
-
-        r6spro	         r6pro，R6pro	         昵称	         查询玩家进阶信息
-
-        r6sops	         r6ops，R6ops	         昵称	         查询玩家干员信息
-
-        r6sp	         r6p，R6p	         昵称	         查询玩家 近期对战 历史段位信息
-
-        r6sset	         r6set，R6set	         昵称	         设置玩家昵称，设置后其余指令可以不带昵称即查询已设置昵称信息
 
 [nonebot_plugin_setu4]
     内置数据库的setu插件:
@@ -227,7 +194,7 @@ HarukaBot                 https://github.com/SK-415/HarukaBot
     
             setu
 
-[nonebot-plugin-drawer]
+[nonebot-plugin-drawer]目前因为文心接口原因停止使用
     基于文心大模型的AI机器人画画插件:
         
         触发菜单命令：画画帮助 当前支持 古风 油画 水彩画 卡通画 二次元 浮世绘 蒸汽波艺术 low poly 像素风格 概念艺术 未来主义 赛博朋克 写实风格 洛丽塔风格 巴洛克风格 超现实主义 主要擅长风景写意画，请尽量给定比较明确的意象
@@ -316,28 +283,6 @@ HarukaBot                 https://github.com/SK-415/HarukaBot
   未改配置群聊中请@机器人使用
 
 ---
-[APEX接口功能]
-   **查询地图轮换**：【a地图】
-
-   **查询制造轮换**：【a制造】
- 
-   **查询猎杀信息**：【a猎杀】
- 
-   **绑定烂橘子ID**：【a绑定 烂橘子ID】
- 
-   **查询玩家信息**：【a查询】(这个需先绑定烂橘子ID)、【a查询 烂橘子ID】
-
->[60s读世界]失效未启用
-    定时向指定群或列表好友发送每日60s读世界
-        注：python3.9以上版本才能正常使用
-
-        在nonebot的env配置文件中输入以下内容
-
-        {#定时发送配置
-        read_qq_friends=[12345678910] #设定要发送的QQ好友
-        read_qq_groups=[123456789,123456789,123456789] #设定要发送的群
-        read_inform_time=[{"HOUR":9,"MINUTE":1}] #在输入时间的时候 不要 以0开头如{"HOUR":06,"MINUTE":08}是错误的}
-        
 
 
 ## | 👥反馈与交流
@@ -354,10 +299,12 @@ mail:angjustin@163.com
 
 bilibili:https://space.bilibili.com/213993950?spm_id_from=333.1007.0.0
 
-
+tg:https://t.me/angangbot
 
 ---
 ## | 更新记录
+
+v1.2 2022.12.20 
 
 v1.1.6 2022.10.23 重写了help获取帮助命令cv2内容
 
