@@ -70,10 +70,22 @@
     
     COMMAND_SEP=[" "] # 命令分隔符-----7
 
-    
-    
+3.2修改[.env]配置文件
 
+pixiv功能
+    5 pixiv_refresh_token = '' 写入你p站的refresh_token,具体获取方法自行百度
 
+apex功能
+    27 apex_api_key = "" https://portal.apexlegendsapi.com/ 获取token
+    
+腾讯云人像变化    
+    30 Secret_Id = ""
+    31 Secret_Key = "" 
+       
+可选填写部分    
+
+    详见.env 配置文件内容
+    
 4. 启动bot
 
     > 舞萌dx插件需额外下载src文件夹进行替换
@@ -165,6 +177,33 @@ HarukaBot                 https://github.com/SK-415/HarukaBot
 
 
 # 命令
+
+[Pic_menu] 
+  菜单
+      菜单 4 2
+
+
+[AnimalVoice_Convert] 
+| [兽音加密]/[convert] | 否 | 群聊/私聊 | 发送需要加密的文字 |
+| [兽音解密]/[deconvert] | 否 | 群聊/私聊 | 发送需要解密的文字 |
+| [切噜一下]/[cherulize] | 否 | 群聊/私聊 | 发送需要解密的文字 |
+| [切噜～]/[decherulize] | 否 | 群聊/私聊 | 发送需要解密的文字 |
+
+[wallpaper] 
+  发送'壁纸'获取一张壁纸
+
+  发送 '运气检测'
+  
+  打开随机出一张壁纸
+
+  非酋还会刷出来风景图
+  
+  api来自 http://api.iw233.cn/API/index.php
+
+  food 获取食物
+  
+  sc + 搜索目标搜图
+
 [nonebot-plugin-status]
     ✨ NoneBot 服务器状态（CPU, Memory, Disk Usage）查看插件✨:
         向机器人发送戳一戳表情
@@ -194,7 +233,7 @@ HarukaBot                 https://github.com/SK-415/HarukaBot
     
             setu
 
-[nonebot-plugin-drawer]目前因为文心接口原因停止使用
+[nonebot-plugin-drawer] 目前因为文心接口原因停止使用
     基于文心大模型的AI机器人画画插件:
         
         触发菜单命令：画画帮助 当前支持 古风 油画 水彩画 卡通画 二次元 浮世绘 蒸汽波艺术 low poly 像素风格 概念艺术 未来主义 赛博朋克 写实风格 洛丽塔风格 巴洛克风格 超现实主义 主要擅长风景写意画，请尽量给定比较明确的意象
@@ -281,6 +320,54 @@ HarukaBot                 https://github.com/SK-415/HarukaBot
   关注列表
 
   未改配置群聊中请@机器人使用
+  
+[savor]
+  分析 + 图片 分析图片tag
+
+[pixiv_bot]
+  看看<类型>榜<范围>：查看pixiv榜单 <类型>可省略
+  
+  来<数量>张图：从推荐插画随机抽选一张插画（<数量>可省略，下同）
+  
+  来<数量>张<关键字>图：搜索关键字，从搜索结果随机抽选一张插画
+  
+      示例：来张初音ミク图、来五张初音ミク图
+      
+  来<数量>张<用户>老师的图：搜索用户，从插画列表中随机抽选一张插画
+  
+  看看图<插画ID>：查看ID对应的插画
+  
+      示例：看看图114514
+      
+  来<数量>张私家车：从书签中随机抽选一张插画（发送者需绑定Pixiv账号，或者在配置中指定默认Pixiv账号）
+
+  /pixivbot bind <pixiv_user_id>：绑定Pixiv账号（用于随机书签功能）
+  
+  /pixivbot unbind：解绑Pixiv账号
+
+  /pixivbot、/pixivbot help：查看帮助
+
+[face2cartoonpic]
+  人像变换 + 图片 可以实现qq的变脸功能
+
+[maimaidx]
+  今日舞萌 查看今天的舞萌运势
+
+  XXXmaimaiXXX什么 随机一首歌
+
+  随个[dx/标准][绿黄红紫白]<难度> 随机一首指定条件的乐曲
+
+  查歌<乐曲标题的一部分> 查询符合条件的乐曲
+
+  [绿黄红紫白]id<歌曲编号> 查询乐曲信息或谱面信息
+
+  <歌曲别名>是什么歌 查询乐曲别名对应的乐曲
+
+  定数查歌 <定数>  查询定数对应的乐曲
+
+  定数查歌 <定数下限> <定数上限>
+
+  分数线 <难度+歌曲id> <分数线> 详情请输入“分数线 帮助”查看
 
 ---
 
@@ -304,6 +391,8 @@ tg:https://t.me/angangbot
 ---
 ## | 更新记录
 
+v1.3 2022 12.30 推倒重来了大部分内容,1.3后的详见新的分支
+
 v1.2 2022.12.20 
 
 v1.1.6 2022.10.23 重写了help获取帮助命令cv2内容
@@ -322,7 +411,7 @@ v1.0.0 2022.10.19 bot初步成型
 
 ---
 ## | 目标:
-- [ ] Steam_asf的bot进行qq控制 <img src="https://progress-bar.dev/5/" alt="bar">
+- [ ] Steam_asf的bot进行qq控制 <img src="https://progress-bar.dev/15/" alt="bar">
 
 # | EXTRA:
 https://afdian.net/a/angjustinl
