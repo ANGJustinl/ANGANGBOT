@@ -26,7 +26,7 @@
 
     一切开发旨在学习，请勿用于非法用途
     
-## | 🚀部署
+## | 🚀部署 (可参照 https://angjustinl.github.io/2023/01/06/ANGANGBOT1/ )
 
 ---
 
