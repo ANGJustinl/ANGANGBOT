@@ -49,8 +49,11 @@
 3. 下载需要的资源文件 
 	
 >部分插件需额外下载src文件夹进行替换    
+>
 >资源文件仅供学习交流使用，请自觉在下载 24 小时内删除资源文件。
+>
 >在运行代码之前，您需要从此链接 https://cowtransfer.com/s/c7fa24d11b3949 [传输口令 rt318w]
+>
 >下载资源文件并解压到src文件夹中
 
 2. 安装依赖
@@ -96,8 +99,11 @@ apex功能
 4. 启动bot
 
 >部分插件需额外下载src文件夹进行替换    
+>
 >资源文件仅供学习交流使用，请自觉在下载 24 小时内删除资源文件。
+>
 >在运行代码之前，您需要从此链接 https://cowtransfer.com/s/c7fa24d11b3949 [传输口令 rt318w]
+>
 >下载资源文件并解压到src文件夹中
 
 推荐使用powershell + nb-cil脚手架
@@ -111,13 +117,21 @@ nb run
 运行项目。如果输出如下所示的内容，代表运行成功：(由于第一次安装不加载配置文件,或许会略有不同,不报错就是没问题的)
 
 >    10-20 16:40:30 [SUCCESS] nonebot | NoneBot is initializing...
+>    
 >    10-20 16:40:30 [INFO] nonebot | Current Env: prod
+>    
 >    10-20 16:40:31 [SUCCESS] nonebot | Succeeded to import "nonebot_plugin_weather_lite"
+>    
 >    ......(这里是被加载的插件)
+>    
 >    10-20 16:40:32 [SUCCESS] nonebot | Running NoneBot...
+>    
 >    10-20 16:40:32 [INFO] uvicorn | Started server process [16676]
+>    
 >    10-20 16:40:32 [INFO] uvicorn | Waiting for application startup.
+>    
 >    10-20 16:40:32 [INFO] uvicorn | Application startup complete.
+>    
 >    10-20 16:40:32 [INFO] uvicorn | Uvicorn running on http://127.0.0.1:10219 (Press CTRL+C to quit)
     
     
