@@ -1,0 +1,23 @@
+{
+    "name": "壁纸鉴赏",
+    "description": "壁纸鉴赏",
+    "usage": "壁纸",
+    "funcs": [
+        {
+            "func": "壁纸",
+            "trigger_method": "关键词命令",
+            "trigger_condition": "wp",
+            "brief_des": "壁纸",
+            "detail_des": "随机出壁纸"
+        },
+        
+        {
+            "func": "运气检测",
+            "trigger_method": "关键词命令",
+            "trigger_condition": "wpwp",
+            "brief_des": "打开随机出一张图",
+            "detail_des": "70%穿衣服，不漏18%穿衣服，少漏8%穿游装2.8%穿游装,少漏1%穿游装,多漏0.2%不穿非酋还会刷出来风景图"
+                          
+        }     
+    ]
+}
