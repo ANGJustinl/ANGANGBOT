@@ -14,6 +14,7 @@ driver.register_adapter(ONEBOT_V11Adapter)
 nonebot.load_builtin_plugins('echo')
 require("nonebot_plugin_guild_patch")
 
+#nonebot.load_plugin('nonebot_plugin_pixivbot')
 nonebot.load_plugin('nonebot_plugin_pjsk')
 nonebot.load_plugin('nonebot_plugin_setu4')
 nonebot.load_plugin('nonebot_plugin_HttpCat')

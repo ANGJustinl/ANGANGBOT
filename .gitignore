@@ -4,6 +4,10 @@
 *.log
 *.png
 *.gif
+.env.dev
+.env.prod
+setu_perm_cfg.json
+dev.*.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

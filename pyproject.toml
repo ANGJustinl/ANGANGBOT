@@ -1,6 +1,6 @@
 [project]
-name = "AABT"
-version = "0.1.0"
+name = "ANGAANGBOT"
+version = "0.2.0"
 description = "AABT"
 readme = "README.md"
 requires-python = ">=3.8, <4.0"
