@@ -14,7 +14,7 @@ driver.register_adapter(ONEBOT_V11Adapter)
 nonebot.load_builtin_plugins('echo')
 require("nonebot_plugin_guild_patch")
 
-#nonebot.load_plugin('nonebot_plugin_pixivbot')
+nonebot.load_plugin('nonebot_plugin_pixivbot')
 nonebot.load_plugin('nonebot_plugin_pjsk')
 nonebot.load_plugin('nonebot_plugin_setu4')
 nonebot.load_plugin('nonebot_plugin_HttpCat')
@@ -26,8 +26,9 @@ nonebot.load_plugin('nonebot_plugin_eventdone')
 nonebot.load_plugin('nonebot_plugin_PicMenu')
 nonebot.load_plugin('nonebot_plugin_weather_lite')
 nonebot.load_plugin('nonebot-plugin-random')
-nonebot.load_plugin('nonebot_plugin_update')
-nonebot.load_plugin('nonebot_plugin_bili_push')
+
+
+#nonebot.load_plugin('nonebot_plugin_bili_push')
 
 
 logger.success("\n"
