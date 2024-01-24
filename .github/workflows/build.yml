@@ -30,7 +30,7 @@ jobs:
         id: metadata
         with:
           images: |
-            {organization}/{repository}
+            ANGJustinl/ANGANGBOT
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
