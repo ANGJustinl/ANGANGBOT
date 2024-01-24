@@ -1,5 +1,6 @@
 # ANGANGBOT #
 /data
+/data/*
 /cache
 *.log
 *.png
