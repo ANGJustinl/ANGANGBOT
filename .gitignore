@@ -1,6 +1,6 @@
 # ANGANGBOT #
 /data
-/data/*
+/docker
 /cache
 *.log
 *.png
