@@ -12,14 +12,17 @@
 </div>
 
 <p align="center">
+
 <a href="https://www.python.org">
-  <img src="https://img.shields.io/github/languages/top/angjustinl/nonebot_plugin_face2cartoonpic_main" alt="languages">
-</a>  
+  <img src="https://img.shields.io/github/languages/top/angjustinl/ANGANGBOT" alt="languages">
+</a> 
+
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 <img src="https://img.shields.io/badge/python-3.10-blue.svg" alt="python">
 <img src="https://img.shields.io/badge/Onebot-v11-lightgrey" alt="onebot11">
-<img src="https://img.shields.io/badge/nonebot-2.0.0b4-orange" alt="nonebot2">
+<img src="https://img.shields.io/badge/nonebot-2.1.0-orange" alt="nonebot2">
 <img src="https://img.shields.io/github/last-commit/ANGJustinl/ANGANGBOT.svg?label=Updated&logo=github&cacheSeconds=600" alt="AABT">   
-<img src="https://img.shields.io/github/downloads/ANGJustinl/ANGANGBOT/total.svg?label=Downloads&logo=github&cacheSeconds=600" alt="AABT">   
+<img src="https://img.shields.io/github/downloads/ANGJustinl/ANGANGBOT/total.svg?label=Downloads&logo=github&cacheSeconds=600" alt="AABT">
 
 ![Alt](https://repobeats.axiom.co/api/embed/6a22c5e973a99b3a396f90ccde21ecfc25c0c2b8.svg "Repobeats analytics image")
 

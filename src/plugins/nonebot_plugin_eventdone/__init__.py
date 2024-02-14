@@ -24,7 +24,6 @@ async def friend_request_rule(event: FriendRequestEvent):
     return add_qq not in qq_set
 
 
-
 # 超级用户推送添加机器人好友请求事件
 add_friend = on_request(friend_request_rule, priority=1, block=True)
 
@@ -40,17 +39,23 @@ async def _(bot: Bot, event: FriendRequestEvent):
         qq_list.append(add_qq)
         comment = add_req["comment"]
         flag = add_req["flag"]
-        realtime = time.strftime("%Y年%m月%d日 %H:%M:%S", time.localtime(add_req["time"]))
+        realtime = time.strftime(
+            "%Y年%m月%d日 %H:%M:%S", time.localtime(add_req["time"])
+        )
         obj["add_qq_req_list"]["qq"] = qq_list
         obj["add_qq_req_list"]["flag"] = flag
         async with aiofiles.open(conf_path, "w", encoding="utf-8") as f:
             await f.write(json.dumps(obj, indent=4))
         for su_qq in super_id:
-            await bot.send_private_msg(user_id=int(su_qq),
-                                        message=f"QQ：{add_qq} 请求添加AABT为好友!\n请求添加时间：{realtime}\n验证信息为：{comment}")
+            await bot.send_private_msg(
+                user_id=int(su_qq),
+                message=f"QQ：{add_qq} 请求添加AABT为好友!\n请求添加时间：{realtime}\n验证信息为：{comment}",
+            )
     except Exception as e:
         for su_qq in super_id:
-            await bot.send_private_msg(user_id=int(su_qq), message=f"AABT坏掉了\n错误信息：{e}")
+            await bot.send_private_msg(
+                user_id=int(su_qq), message=f"AABT坏掉了\n错误信息：{e}"
+            )
 
 
 # 超级用户使用，同意好友添加机器人请求
@@ -65,16 +70,24 @@ async def _(bot: Bot, event: PrivateMessageEvent):
         qq_set = set(obj["add_qq_req_list"]["qq"])
         flag = obj["add_qq_req_list"]["flag"]
         user_id = int(event.get_user_id())
-        agree_id = int(str(event.get_message()).split("同意")[-1])          #在QQ上同意时请加上申请人QQ号
+        agree_id = int(
+            str(event.get_message()).split("同意")[-1]
+        )  # 在QQ上同意时请加上申请人QQ号
         if agree_id in qq_set:
-            await bot.send_private_msg(user_id=user_id, message=f"AABT成功添加QQ:{agree_id}为好友！")
+            await bot.send_private_msg(
+                user_id=user_id, message=f"AABT成功添加QQ:{agree_id}为好友！"
+            )
             await bot.set_friend_add_request(flag=flag, approve=True, remark="")
             obj["add_qq_req_list"]["qq"] = list(qq_set)
             obj["add_qq_req_list"]["flag"] = ""
             async with aiofiles.open(conf_path, "w", encoding="utf-8") as f:
                 await f.write(json.dumps(obj, indent=4))
         else:
-            await bot.send_private_msg(user_id=user_id, message=f"QQ:{agree_id}不在好友申请列表！")
+            await bot.send_private_msg(
+                user_id=user_id, message=f"QQ:{agree_id}不在好友申请列表！"
+            )
     except Exception as e:
         for su_qq in super_id:
-            await bot.send_private_msg(user_id=int(su_qq), message=f"AABT出错了\n错误信息：{e}")
+            await bot.send_private_msg(
+                user_id=int(su_qq), message=f"AABT出错了\n错误信息：{e}"
+            )

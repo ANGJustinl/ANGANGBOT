@@ -3,8 +3,10 @@ from typing import List
 DRAW_OUTPUT_TYPES = ["text", "image", "record", "video"]
 MESSAGE_TYPES = ["command", "keyword", "regex"]
 
+
 def is_list_str(l):
     return isinstance(l, list) and sum([isinstance(i, str) for i in l])
+
 
 class RandomDetailConfig:
     draw_output: str
@@ -22,11 +24,11 @@ class RandomDetailConfig:
         self.draw_output = config_dict.get("draw_output")
         if self.draw_output not in DRAW_OUTPUT_TYPES:
             self.draw_output = "image"
-        
+
         self.message_type = config_dict.get("message_type")
         if self.message_type not in MESSAGE_TYPES:
             self.message_type = "command"
-        
+
         self.message = config_dict.get("message")
         if not is_list_str(self.message):
             self.message = [f"随机{dir_name}"]

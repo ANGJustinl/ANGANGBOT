@@ -2,6 +2,7 @@ import httpx
 import asyncio
 from nonebot.log import logger
 
+
 async def download_url(url: str) -> bytes:
     async with httpx.AsyncClient() as client:
         for i in range(3):

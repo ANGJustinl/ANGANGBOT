@@ -1,4 +1,4 @@
-#https://github.com/Special-Week/nonebot_plugin_setu4
+# https://github.com/Special-Week/nonebot_plugin_setu4
 import contextlib
 from re import I
 
@@ -28,7 +28,9 @@ with contextlib.suppress(Exception):
 
 
 # 命令正则表达式
-setu_regex: str = r"^(setu|色图|涩图|想色色|来份色色|来份色图|想涩涩|多来点|来点色图|来张setu|来张色图|来点色色|色色|涩涩)\s?([x|✖️|×|X|*]?\d+[张|个|份]?)?\s?(r18)?\s?(.*)?"
+setu_regex: str = (
+    r"^(setu|色图|涩图|想色色|来份色色|来份色图|想涩涩|多来点|来点色图|来张setu|来张色图|来点色色|色色|涩涩)\s?([x|✖️|×|X|*]?\d+[张|个|份]?)?\s?(r18)?\s?(.*)?"
+)
 on_regex(
     setu_regex,
     flags=I,

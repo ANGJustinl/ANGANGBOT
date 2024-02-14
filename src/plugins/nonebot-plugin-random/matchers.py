@@ -12,12 +12,7 @@ from nonebot.typing import T_Handler, T_State
 from nonebot.params import _command_arg
 from nonebot import logger
 from nonebot import on_command, on_keyword, on_regex
-from nonebot.adapters.onebot.v11 import (
-    Bot,
-    Message,
-    MessageSegment,
-    GroupMessageEvent
-)
+from nonebot.adapters.onebot.v11 import Bot, Message, MessageSegment, GroupMessageEvent
 
 from .utils import *
 from .depends import *
@@ -27,35 +22,35 @@ from .download import *
 data_path = Path() / "data" / "random"
 COMMANDS = []
 
+
 async def bot_send(
-    path:Path, 
-    type:str, 
-    bot:Bot, 
-    event:GroupMessageEvent,
-    output_prefix:str,
-    output_suffix:str,
-    is_at_sender:bool,
+    path: Path,
+    type: str,
+    bot: Bot,
+    event: GroupMessageEvent,
+    output_prefix: str,
+    output_suffix: str,
+    is_at_sender: bool,
 ):
-    output_prefix = replace_message(output_prefix,path)
-    output_suffix = replace_message(output_suffix,path)
+    output_prefix = replace_message(output_prefix, path)
+    output_suffix = replace_message(output_suffix, path)
     if type == "image":
         await bot.send(
             event=event,
-            message=Message(output_prefix)+
-                MessageSegment.image(file=f"file:///{path.resolve()}")+
-                Message(output_suffix),
-            at_sender=is_at_sender
+            message=Message(output_prefix)
+            + MessageSegment.image(file=f"file:///{path.resolve()}")
+            + Message(output_suffix),
+            at_sender=is_at_sender,
         )
     elif type == "record":
         await bot.send(
-            event=event,
-            message=MessageSegment.record(file=f"file:///{path.resolve()}")
+            event=event, message=MessageSegment.record(file=f"file:///{path.resolve()}")
         )
     elif type == "video":
         await bot.send(
-            event=event,
-            message=MessageSegment.video(file=f"file:///{path.resolve()}")
+            event=event, message=MessageSegment.video(file=f"file:///{path.resolve()}")
         )
+
 
 def get_files(
     dir_name: str,
@@ -72,15 +67,16 @@ def get_files(
         dirs.pop(0)
     return files
 
+
 def create_matchers():
     def handler(
-        dir_name: str, 
+        dir_name: str,
         config: RandomDetailConfig,
         is_specify: bool = False,
     ) -> T_Handler:
         async def handle(
-            matcher: Matcher, 
-            bot: Bot, 
+            matcher: Matcher,
+            bot: Bot,
             event: GroupMessageEvent,
             state: T_State,
         ):
@@ -96,14 +92,16 @@ def create_matchers():
                                 break
             except IndexError:
                 traceback.print_exc()
-                await matcher.finish(message=f"当前文件夹/{dir_name}下没有文件，请放置任意文件并配置好后再使用命令")
+                await matcher.finish(
+                    message=f"当前文件夹/{dir_name}下没有文件，请放置任意文件并配置好后再使用命令"
+                )
             except:
                 traceback.print_exc()
                 await matcher.finish(message="出现未知错误，请自行查看日志解决")
             await bot_send(
-                path=get_file, 
-                type=config.draw_output, 
-                bot=bot, 
+                path=get_file,
+                type=config.draw_output,
+                bot=bot,
                 event=event,
                 output_prefix=config.output_prefix,
                 output_suffix=config.output_suffix,
@@ -117,7 +115,7 @@ def create_matchers():
         commands: List[str],
     ) -> T_Handler:
         async def handle(
-            bot: Bot, 
+            bot: Bot,
             event: GroupMessageEvent,
         ):
             images: List[bytes] = []
@@ -153,30 +151,31 @@ def create_matchers():
                     except:
                         texts = raw_text.split()
                     images_name += texts
-            
+
             base = 0
             while len(images_name) < len(images):
-                images_name.append(str(int(datetime.now().timestamp())+base))
+                images_name.append(str(int(datetime.now().timestamp()) + base))
                 base += 1
-            images_name = images_name[:len(images)]
-            images_name = [f"{img_name}.{imghdr.what(None, h=images[i])}" for i,img_name in enumerate(images_name)]
+            images_name = images_name[: len(images)]
+            images_name = [
+                f"{img_name}.{imghdr.what(None, h=images[i])}"
+                for i, img_name in enumerate(images_name)
+            ]
 
             path = data_path.joinpath(dir_name)
-            for i,img in enumerate(images):
+            for i, img in enumerate(images):
                 img_path = path / images_name[i]
                 with img_path.open("wb+") as f:
                     f.write(img)
 
             tosend = f"添加完成，成功{success}张，失败{fail}张，可以直接用于抽取"
-            await bot.send(event=event,message=tosend,at_sender=True)
+            await bot.send(event=event, message=tosend, at_sender=True)
 
         return handle
 
-    def delete_image_handler(
-        dir_name: str
-    ) -> T_Handler:
+    def delete_image_handler(dir_name: str) -> T_Handler:
         async def handle(
-            bot: Bot, 
+            bot: Bot,
             event: GroupMessageEvent,
         ):
             images: List[bytes] = []
@@ -205,7 +204,7 @@ def create_matchers():
                         logger.error("删除图片读取失败")
             imgs_hash = [hashlib.md5(image).hexdigest() for image in images]
 
-            files = get_files(dir_name, "image")  
+            files = get_files(dir_name, "image")
 
             remove_file = 0
             for f in files:
@@ -213,8 +212,12 @@ def create_matchers():
                 if f_hash in imgs_hash:
                     f.unlink()
                     remove_file += 1
-            
-            await bot.send(event=event,message=f"删除图片成功，一共删除了{remove_file}张图片",at_sender=True)
+
+            await bot.send(
+                event=event,
+                message=f"删除图片成功，一共删除了{remove_file}张图片",
+                at_sender=True,
+            )
 
         return handle
 
@@ -227,14 +230,18 @@ def create_matchers():
             config_dict = {}
             if config_path.exists():
                 try:
-                    with config_path.open("r",encoding="UTF-8") as f:
+                    with config_path.open("r", encoding="UTF-8") as f:
                         config_dict = json.loads(f.read())
                 except:
                     traceback.print_exc()
-                    logger.error(f"/{dir_name}配置文件格式错误，请检查格式并进行重新配置")
-            config = RandomDetailConfig(dir_name=dir_name,config_dict=config_dict)
+                    logger.error(
+                        f"/{dir_name}配置文件格式错误，请检查格式并进行重新配置"
+                    )
+            config = RandomDetailConfig(dir_name=dir_name, config_dict=config_dict)
             if config.message_type == "command":
-                COMMANDS.append(("@我 + " if config.is_tome else "") + '/'.join(config.message))
+                COMMANDS.append(
+                    ("@我 + " if config.is_tome else "") + "/".join(config.message)
+                )
                 on_command(
                     config.message[0],
                     aliases=set(config.message[1:]),
@@ -275,7 +282,9 @@ def create_matchers():
                         )
                     )
             elif config.message_type == "keyword":
-                COMMANDS.append(f"关键词含有{config.message[0]}{' 并@我' if config.is_tome else ''}")
+                COMMANDS.append(
+                    f"关键词含有{config.message[0]}{' 并@我' if config.is_tome else ''}"
+                )
                 on_keyword(
                     config.message[0],
                     block=True,
@@ -289,9 +298,13 @@ def create_matchers():
                 )
             elif config.message_type == "regex":
                 if len(config.message) <= 1:
-                    logger.error(f"/{dir_name}使用正则匹配时应保证message有两项，第一项是正则表达式，第二项是匹配表达式的命令（用于命令展示）")
+                    logger.error(
+                        f"/{dir_name}使用正则匹配时应保证message有两项，第一项是正则表达式，第二项是匹配表达式的命令（用于命令展示）"
+                    )
                     continue
-                COMMANDS.append(f"{'@我 + ' if config.is_tome else ''}{config.message[1]}")
+                COMMANDS.append(
+                    f"{'@我 + ' if config.is_tome else ''}{config.message[1]}"
+                )
                 on_regex(
                     config.message[0],
                     block=True,
@@ -303,5 +316,6 @@ def create_matchers():
                         config=config,
                     )
                 )
+
 
 create_matchers()

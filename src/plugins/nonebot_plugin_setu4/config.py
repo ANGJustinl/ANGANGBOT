@@ -14,11 +14,13 @@ if not DATA_PATH.exists() or not DATA_PATH.is_dir():
 class Config(BaseSettings):
     setu_disable_wlist: bool = False  # 是否禁用白名单检查
     setu_enable_private: bool = False  # 是否允许未在白名单的私聊会话使用
-    setu_save: Union[
-        bool, str
-    ] = False  # 保存图片的路径, 默认False, 填.env时候希望收到的是字符串而不是True
+    setu_save: Union[bool, str] = (
+        False  # 保存图片的路径, 默认False, 填.env时候希望收到的是字符串而不是True
+    )
     # 数据库路径, 默认使用github的地址
-    database_path: str = "https://raw.githubusercontent.com/Special-Week/nonebot_plugin_setu4/main/nonebot_plugin_setu4/resource/lolicon.db"
+    database_path: str = (
+        "https://raw.githubusercontent.com/Special-Week/nonebot_plugin_setu4/main/nonebot_plugin_setu4/resource/lolicon.db"
+    )
 
     setu_cd: int = 30  # 冷却时间
     setu_withdraw_time: int = 100  # 撤回时间
