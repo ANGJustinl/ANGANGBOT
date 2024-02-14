@@ -38,7 +38,6 @@ nonebot-plugin-guild-patch = "^0.2.3"
 nonebot-plugin-PicMenu = "^0.2"
 nonebot-plugin-weather-lite = "^0.0.1"
 nonebot-plugin-pixivbot = "^2.0.3"
-nonebot-plugin-fortune = "^0.4.12"
 
 [build-system]
 requires = ["poetry-core"]
