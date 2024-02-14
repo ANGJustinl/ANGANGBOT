@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: generate-token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_KEY }}
+
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
+
+      - name: Setup Python Environment
+        uses: ./.github/actions/setup-python
+
+      - run: echo "TAG_NAME=v$(poetry version -s)" >> $GITHUB_ENV
+
+      - name: Push Tag
+        run: |
+          git add .
+          git commit -m ":bookmark: Release $(poetry version -s)"
+          git tag ${{ env.TAG_NAME }}
+          git push && git push --tags
