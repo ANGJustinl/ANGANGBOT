@@ -1,14 +1,14 @@
 # ANGANGBOT #
-/data
-/docker
-/cache
+data
+docker
+cache
 *.log
 *.png
 *.gif
 .env.dev
-.env.prod
+set.json
 setu_perm_cfg.json
-dev.*.py
+.idea
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
