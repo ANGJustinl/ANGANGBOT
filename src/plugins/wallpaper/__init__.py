@@ -1,20 +1,16 @@
-from nonebot import on_command, get_driver, on_regex
+from nonebot import on_command, on_regex
 from nonebot.matcher import Matcher
 from nonebot.typing import T_State
-from nonebot.permission import SUPERUSER
-from nonebot.params import Arg, CommandArg
+from nonebot.params import Arg
 from nonebot.adapters.onebot.v11 import Message, MessageSegment, Bot, MessageEvent
-
-from nonebot.adapters.onebot.v11.helpers import Numbers
 
 from .exchange import get_redirect_url
 from .limiter import limiter, cd_lim
 from .get import get_msgurl
-from .post import get_msg, get_msg2
-from re import I, sub
+from .post import get_msg
+from re import I
 import asyncio
 from io import BytesIO
-from PIL import Image
 
 ###################
 from nonebot.plugin import PluginMetadata

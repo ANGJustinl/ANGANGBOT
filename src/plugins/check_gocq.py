@@ -5,7 +5,8 @@ import subprocess
 from nonebot.log import logger
 from nonebot import require, on_command
 
-group_id = 688693279  # 这里填检测群位置
+group_id = None  # 这里填检测群位置
+
 
 try:
     scheduler = require("nonebot_plugin_apscheduler")
