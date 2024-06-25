@@ -15,10 +15,9 @@ require("nonebot_plugin_guild_patch")
 
 nonebot.load_plugin("nonebot_plugin_pixivbot")
 nonebot.load_plugin("nonebot_plugin_tarot")
-#nonebot.load_plugin('nonebot_plugin_fortune')
+# nonebot.load_plugin('nonebot_plugin_fortune')
 nonebot.load_plugin("nonebot_plugin_PicMenu")
 nonebot.load_plugin("nonebot_plugin_weather_lite")
-
 
 
 logger.success(
