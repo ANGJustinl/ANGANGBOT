@@ -1,5 +1,4 @@
 import nonebot
-from nonebot import require
 from nonebot.log import logger
 from nonebot.adapters.onebot.v11 import Adapter as ONEBOT_V11Adapter
 
@@ -11,7 +10,6 @@ driver = nonebot.get_driver()
 driver.register_adapter(ONEBOT_V11Adapter)
 
 nonebot.load_builtin_plugins("echo")
-require("nonebot_plugin_guild_patch")
 
 nonebot.load_plugin("nonebot_plugin_pixivbot")
 nonebot.load_plugin("nonebot_plugin_tarot")
