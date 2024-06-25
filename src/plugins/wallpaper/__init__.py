@@ -201,4 +201,3 @@ async def _handle(matcher: Matcher, event: MessageEvent, bot: Bot):
             await bot.delete_msg(message_id=msg_id)
     except:
         pass
-

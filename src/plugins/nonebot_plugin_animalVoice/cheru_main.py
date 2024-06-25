@@ -36,7 +36,9 @@ async def _(bot: Bot, state: T_State, event: MessageEvent):
     try:
         msg = str2cheru(msg_input)
     except Exception as e:
-        await cherulizing.finish("切、切噜报错切不动勒切噜噜{}".format(e), reply_message=True)
+        await cherulizing.finish(
+            "切、切噜报错切不动勒切噜噜{}".format(e), reply_message=True
+        )
 
     msgs = []
     msgs.append(
@@ -74,7 +76,9 @@ async def _(bot: Bot, state: T_State, event: MessageEvent):
     try:
         msg = "你的的切噜噜是：\n{}".format(cheru2str(msg_input))
     except Exception as e:
-        await decherulizing.finish("切、切噜报错切不动勒切噜噜{}".format(e), reply_message=True)
+        await decherulizing.finish(
+            "切、切噜报错切不动勒切噜噜{}".format(e), reply_message=True
+        )
 
     msgs = []
     msgs.append(
