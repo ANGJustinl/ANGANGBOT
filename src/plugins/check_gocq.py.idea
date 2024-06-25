@@ -1,0 +1,21 @@
+import asyncio
+import nonebot
+import subprocess
+
+from nonebot.log import logger
+from nonebot import require, on_command
+
+group_id = None  # 这里填检测群位置
+
+
+try:
+    scheduler = require("nonebot_plugin_apscheduler")
+    from nonebot_plugin_apscheduler import scheduler
+except Exception:
+    scheduler = None
+
+logger.opt(colors=True).info(
+    "已检测到软依赖<y>nonebot_plugin_apscheduler</y>, <g>开启gocq检测</g>"
+    if scheduler
+    else "未检测到软依赖<y>nonebot_plugin_apscheduler</y>，<r>禁用gocq检测</r>"
+)

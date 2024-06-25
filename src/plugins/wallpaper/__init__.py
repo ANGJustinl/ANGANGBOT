@@ -47,16 +47,13 @@ wp = on_command("壁纸", aliases={"wp"}, priority=5, block=True)
 re = on_command(
     "运气检测", aliases={"luck", "随机壁纸", "wpwp"}, priority=5, block=True
 )
-fd = on_command("别在这里发癫", aliases={"fd"}, priority=5, block=True)
-regex = r"^(fuck|操|操死|社保|想涩|超死|超市|炒死|焯死)\s?(.*)?"
-kkp = on_regex(regex, flags=I, priority=20, block=True)
+fuck_regex = r"^(fuck|操|操死|社保|想涩|超死|超市|炒死|焯死)\s?(.*)?"
+kkp = on_regex(fuck_regex, flags=I, priority=20, block=True)
 day_ = on_command("每日新闻", aliases={"news"}, priority=5, block=True)
 msn = on_command("msn", priority=5, block=True)
 sese = on_command("sese")
 mature = on_command("mature", aliases={"r18roll1"}, priority=5, block=True)
 m2 = on_command("mature2", aliases={"r18roll2"}, priority=5, block=True)
-search = on_command("搜图", aliases={"sc"}, priority=5, block=True)
-hle = on_command("impart")
 
 
 @wp.handle()
@@ -193,7 +190,6 @@ async def _handle(matcher: Matcher, event: MessageEvent, bot: Bot):
     if not cd_lim.check(user_id):
         left_time = cd_lim.left_time(user_id)
         await matcher.finish(f"我知道你急了.但是你先别急,0.5月一次")
-        return
     setu_msg_id = []
     cd_lim.start_cd(user_id)
     url = get_redirect_url("https://moe.jitsu.top/r18")
@@ -206,45 +202,3 @@ async def _handle(matcher: Matcher, event: MessageEvent, bot: Bot):
     except:
         pass
 
-
-@search.got("aim", prompt="请发送搜索目标")
-async def get_aim(state: T_State, aim: Message = Arg()):
-    urls = aim
-    if not str:
-        await search.finish("请重新启动并发送目标")
-
-    state["urls"] = urls
-
-
-@search.handle()
-async def _handle(state: T_State, matcher: Matcher, event: MessageEvent):
-    aim = state["urls"][0]
-    try:
-        url = get_redirect_url("https://source.unsplash.com/1600x900/?{}".format(aim))
-    except:
-        await search.finish("请输入英文")
-    # await re.send("haha我不给")
-    await search.finish(
-        "这是您要的{}".format(aim) + MessageSegment.image(file=url, cache=False),
-        at_sender=True,
-    )
-
-
-@hle.handle()
-async def _handle(matcher: Matcher, event: MessageEvent):
-    url = "https://gchat.qpic.cn/gchatpic_new/77139032/696748432-%202361915796-CD03D3125366BBCD03AEE7FB07E65173/0?term=2&amp;is_origin=0"
-    await hle.finish(MessageSegment.image(file=url, cache=True), at_sender=True)
-
-
-"""   
-@arc.handle()
-async def _handle(matcher: Matcher,event: MessageEvent,bot:Bot,ms:Message=CommandArg()):    
-
-    num = str(Numbers(ms))
-    name = ms.strip([num])
-    url=get_redirect_url('https://chart.arisa.moe/'+name+'/'+num+'.webp')
-    await arc.send(url)
-    try: 
-        await arc.send('数字1234为铺面等级'+MessageSegment.image(file=url, cache=False), at_sender=True)
-    except Exception as e:
-        await arc.finish('lost')"""

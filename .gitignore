@@ -1,7 +1,7 @@
 # ANGANGBOT #
-data
-docker
-cache
+data/
+docker/
+cache/
 *.log
 *.png
 *.gif
