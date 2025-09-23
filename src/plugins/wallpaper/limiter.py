@@ -17,9 +17,3 @@ class FreqLimiter:
 
     def left_time(self, key) -> float:
         return self.next_time[key] - time.time()
-
-
-cd_time = 60
-limiter = FreqLimiter(cd_time)
-cd = 1919810
-cd_lim = FreqLimiter(cd)

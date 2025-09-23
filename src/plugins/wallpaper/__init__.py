@@ -1,19 +1,22 @@
-from nonebot import on_command, on_regex
-from nonebot.matcher import Matcher
-from nonebot.typing import T_State
-from nonebot.params import Arg
-from nonebot.adapters.onebot.v11 import Message, MessageSegment, Bot, MessageEvent
-
-from .exchange import get_redirect_url
-from .limiter import limiter, cd_lim
-from .get import get_msgurl
-from .post import get_msg
-from re import I
+import os
 import asyncio
-from io import BytesIO
+from datetime import datetime
 
-###################
+from nonebot import on_command, on_regex, require
+from nonebot.log import logger
+from nonebot.typing import T_State
+from nonebot.matcher import Matcher
 from nonebot.plugin import PluginMetadata
+from nonebot.params import ArgPlainText, CommandArg
+from nonebot.adapters.onebot.v11 import Bot, Message, Event, MessageSegment, MessageEvent
+
+from .utils import get_redirect_url, get_msgurl
+from .scheduler import get_daily_image_scheduler
+from .limiter import FreqLimiter
+
+require("nonebot_plugin_apscheduler")
+from nonebot_plugin_apscheduler import scheduler
+
 
 __plugin_meta__ = PluginMetadata(
     name="壁纸鉴赏",
@@ -39,50 +42,99 @@ __plugin_meta__ = PluginMetadata(
         "menu_template": "default",
     },
 )
-###################
-erro = "https://moetu.org/image/Ur3aj"
+limiter_default = FreqLimiter(60)
+limiter_loong = FreqLimiter(114514)
 
-food = on_command("美食", aliases={"food"}, priority=5, block=True)
-wp = on_command("壁纸", aliases={"wp"}, priority=5, block=True)
+scheduler.add_job(get_daily_image_scheduler, "cron", hour=8, misfire_grace_time=600)
+asyncio.run(get_daily_image_scheduler())
+
+get_random_wallpaper = on_command("壁纸", aliases={"wp"}, priority=10, block=True)
+get_random_wallpapers = on_command("多张壁纸", aliases={"wps"}, priority=10, block=True)
 re = on_command(
-    "运气检测", aliases={"luck", "随机壁纸", "wpwp"}, priority=5, block=True
+    "运气检测", aliases={"luck", "随机壁纸", "wpwp"}, priority=10, block=True
 )
-fuck_regex = r"^(fuck|操|操死|社保|想涩|超死|超市|炒死|焯死)\s?(.*)?"
-kkp = on_regex(fuck_regex, flags=I, priority=20, block=True)
-day_ = on_command("每日新闻", aliases={"news"}, priority=5, block=True)
+food = on_command("美食", aliases={"food"}, priority=10, block=True)
+daily = on_command("每日新闻", aliases={"news"}, priority=10, block=True)
 msn = on_command("msn", priority=5, block=True)
 sese = on_command("sese")
 mature = on_command("mature", aliases={"r18roll1"}, priority=5, block=True)
 m2 = on_command("mature2", aliases={"r18roll2"}, priority=5, block=True)
 
 
-@wp.handle()
-async def _handle(matcher: Matcher, event: MessageEvent, bot: Bot):
+@get_random_wallpaper.handle()
+async def _handle(matcher: Matcher, event: MessageEvent):
     user_id = event.user_id
-    if not limiter.check(user_id):
-        left_time = limiter.left_time(user_id)
+    if not limiter_default.check(user_id):
+        left_time = limiter_default.left_time(user_id)
         await matcher.finish(f"我知道你急了.但是你先别急,cd还有{left_time}秒")
         return
 
-    limiter.start_cd(user_id)
-    url2 = "https://moe.anosu.top/img"
-    url = get_redirect_url(url2)
-    # url=get_redirect_url("https://iw233.cn/api.php?sort=top")
+    limiter_default.start_cd(user_id)
+    url = await get_redirect_url(
+        "https://moe.anosu.top/img"
+    )  # 确保 get_redirect_url 是 async
     try:
-        await wp.send(
+        await get_random_wallpaper.send(
             "您点的图来了{}".format(url) + MessageSegment.image(file=url, cache=False),
             at_sender=True,
         )
     except Exception as e:
-        await wp.finish(
-            "tx风控了..." + MessageSegment.image(file=erro, cache=False), at_sender=True
+        await get_random_wallpaper.finish(
+            "tx风控了...", at_sender=True
         )
-    pass
+    else:
+        get_random_wallpaper.finish()
 
+@get_random_wallpapers.handle()
+async def _handle(matcher: Matcher, event: MessageEvent):
+    user_id = event.user_id
+    if not limiter_default.check(user_id):
+        left_time = limiter_default.left_time(user_id)
+        await matcher.finish(f"我知道你急了.但是你先别急,cd还有{left_time}秒")
+        return
+
+    limiter_default.start_cd(user_id)
+
+@get_random_wallpapers.got("number", prompt="请输入你想要获取的图片数量")
+async def get_random_wallpapers_number(bot: Bot, event: MessageEvent, number: int = ArgPlainText()):
+    await get_random_wallpapers.send(f"图片正在获取中，请稍等...")
+    try:
+        image_list = []
+        msg_list = []
+        for i in range(int(number)):
+            url = await get_redirect_url("https://moe.anosu.top/img")
+            base64_data = await get_msgurl(url)
+            await asyncio.sleep(0.5)
+            image_list.append((base64_data, url))
+
+        msg_list.append("获取的图片如下：\n")
+        for base64_data, url in image_list:
+            msg_list.append(
+                    Message(f"图片链接： {url}\n")
+                    + MessageSegment.image(base64_data, cache=False)
+                )
+            msgs = [
+                    {
+                        "type": "node",
+                        "data": {
+                            "name": "setu-bot",
+                            "uin": bot.self_id,
+                            "content": msg,
+                        },
+                    }
+                    for msg in msg_list
+                ]
+            await asyncio.sleep(0.5)
+        await bot.call_api("send_group_forward_msg", group_id=event.group_id, messages=msgs)
+    except Exception as e:
+        await get_random_wallpapers.finish(f"tx 风控了... {str(e)}")
+    else:
+        await get_random_wallpapers.finish()
 
 @mature.handle()
 async def _handle(matcher: Matcher, event: MessageEvent, bot: Bot):
-    user_id = event.user_id
+    await mature.finish("暂时关闭")
+'''    user_id = event.user_id
     # if not limiter.check(user_id):
     #    left_time = limiter.left_time(user_id)
     #    await matcher.finish(f'我知道你急了.但是你先别急,一天一次')
@@ -102,102 +154,91 @@ async def _handle(matcher: Matcher, event: MessageEvent, bot: Bot):
     except Exception as e:
         await wp.finish(
             "tx风控了..." + MessageSegment.image(file=erro, cache=False), at_sender=True
-        )
-
+        )'''
 
 @re.handle()
-async def _handle(matcher: Matcher, event: MessageEvent, bot: Bot):
+async def _handle(event: MessageEvent):
     user_id = event.user_id
-    if not limiter.check(user_id):
-        left_time = limiter.left_time(user_id)
+    if not limiter_default.check(user_id):
+        left_time = limiter_default.left_time(user_id)
         await re.finish(f"我知道你很非.但是你先别急,cd还有{left_time}秒")
         return
 
-    limiter.start_cd(user_id)
-    msgs = []
-    # url =
-    url = get_redirect_url("https://iw233.cn/api.php?sort=top")
-    base64 = await get_msgurl(url)
-
-    byte_data = BytesIO(base64)
-    pic = byte_data.getvalue()
-
-    # url = get_msg2('https://api.lolicon.app/setu/v2')
+    limiter_default.start_cd(user_id)
+    url = await get_redirect_url(
+        "https://iw233.cn/api.php?sort=top"
+    )  # 确保 get_redirect_url 是 async
+    base64_data = await get_msgurl(url)
     try:
         await re.send(
-            "看看你的运气{}".format(url) + MessageSegment.image(file=pic, cache=False),
+            "看看你的运气{}".format(url) + MessageSegment.image(file=base64_data, cache=False),
             at_sender=True,
         )
     except Exception as e:
         await re.finish("tx风控了..." + str(e))
-    pass
-
+    else:
+        re.finish()
 
 @food.handle()
 async def _handle(matcher: Matcher, event: MessageEvent):
     user_id = event.user_id
-    if not limiter.check(user_id):
-        left_time = limiter.left_time(user_id)
+    if not limiter_default.check(user_id):
+        left_time = limiter_default.left_time(user_id)
         await matcher.finish(f"我知道你很饿.但是你先别急,cd还有{left_time}秒")
         return
 
-    limiter.start_cd(user_id)
+    limiter_default.start_cd(user_id)
 
-    url = get_redirect_url("https://source.unsplash.com/1600x900/?food")
-    # await re.send("haha我不给")
+    url = await get_redirect_url("https://source.unsplash.com/1600x900/?food")
     await food.finish(MessageSegment.image(file=url, cache=False), at_sender=True)
 
-
-@kkp.handle()
-async def _handle(matcher: Matcher, event: MessageEvent):
-    url = "https://gchat.qpic.cn/gchatpic_new/7713%209032/1003802944-2292404790-E19D492DCE5C76E6E50E81468340CFDF/0?term=2&amp;is_origin=0]%22"
-    await kkp.finish(MessageSegment.image(file=url, cache=True), at_sender=True)
-
+@daily.handle()
+async def _handle():
+    today = datetime.now().strftime("%Y-%m-%d")
+    filepath = f"data/daily/{today}.txt"
+    if os.path.exists(filepath):
+        with open(filepath, "r") as f:
+            msg = f.read()
+            await daily.finish(
+                MessageSegment.image(file=msg, cache=True), at_sender=True
+            )
+    else:
+        await daily.finish("今日新闻未获取到", at_sender=True)
 
 @msn.handle()
-async def _handle(matcher: Matcher, event: MessageEvent):
-    url = get_redirect_url("https://api.vvhan.com/api/bing?rand=sj&size=1920x1680")
+async def _handle():
+    url = await get_redirect_url("https://api.vvhan.com/api/bing?rand=sj&size=1920x1680")
     await msn.finish(MessageSegment.image(file=url, cache=False), at_sender=True)
-
-
-@day_.handle()
-async def _handle(matcher: Matcher, event: MessageEvent):
-    url = "https://v2.alapi.cn/api/zaobao"
-    token = "VNk9bbtpNdCSO702"
-    msg = await get_msg(url, token)
-    await day_.finish(MessageSegment.image(file=msg, cache=False), at_sender=True)
-
 
 @sese.handle()
 async def _handle(matcher: Matcher, event: MessageEvent):
-    url = get_redirect_url("https://api.vvhan.com/api/girl")
+    url = await get_redirect_url("https://api.vvhan.com/api/girl")
 
     user_id = event.user_id
 
-    if not limiter.check(user_id):
-        left_time = limiter.left_time(user_id)
-        await matcher.finish(f"我知道你想要打∠.但是你先别急,cd还有{left_time}秒")
+    if not limiter_default.check(user_id):
+        left_time = limiter_default.left_time(user_id)
+        await matcher.finish(f"我知道你想要图.但是你先别急,cd还有{left_time}秒")
         return
 
-    limiter.start_cd(user_id)
+    limiter_default.start_cd(user_id)
 
     await sese.finish(MessageSegment.image(file=url, cache=False), at_sender=True)
-
 
 @m2.handle()
 async def _handle(matcher: Matcher, event: MessageEvent, bot: Bot):
     user_id = event.user_id
-    if not cd_lim.check(user_id):
-        left_time = cd_lim.left_time(user_id)
+    if not limiter_loong.check(user_id):
+        left_time = limiter_loong.left_time(user_id)
         await matcher.finish(f"我知道你急了.但是你先别急,0.5月一次")
     setu_msg_id = []
-    cd_lim.start_cd(user_id)
-    url = get_redirect_url("https://moe.jitsu.top/r18")
+    limiter_loong.start_cd(user_id)
+    url = await get_redirect_url("https://moe.jitsu.top/r18")
     msg_id = (await m2.send("看看你的运气{}".format(url)))["message_id"]
     setu_msg_id.append(msg_id)
     await asyncio.sleep(30)
     try:
         for msg_id in setu_msg_id:
             await bot.delete_msg(message_id=msg_id)
-    except:
-        pass
+    except Exception as e:
+        await matcher.finish("tx风控了..." + str(e))

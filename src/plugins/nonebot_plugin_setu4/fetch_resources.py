@@ -16,7 +16,7 @@ async def download_database() -> str:
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36",
     }
-    async with AsyncClient(proxies=config.scientific_agency) as client:
+    async with AsyncClient(proxy=config.scientific_agency) as client:
         re = await client.get(url=config.database_path, headers=headers, timeout=120)
         if re.status_code == 200:
             with open(Path(__file__).parent / "resource/lolicon.db", "wb") as f:

@@ -1,9 +1,9 @@
 from pathlib import Path
-from typing import List, Union
+from typing import List, Optional, Union
 
 from loguru import logger
 from nonebot import get_driver
-from pydantic import BaseSettings
+from pydantic import BaseModel, parse_obj_as
 
 DATA_PATH = Path("data/setu4")
 if not DATA_PATH.exists() or not DATA_PATH.is_dir():
@@ -11,16 +11,14 @@ if not DATA_PATH.exists() or not DATA_PATH.is_dir():
     DATA_PATH.mkdir(0o755, parents=True, exist_ok=True)
 
 
-class Config(BaseSettings):
+class Config(BaseModel):
     setu_disable_wlist: bool = False  # 是否禁用白名单检查
     setu_enable_private: bool = False  # 是否允许未在白名单的私聊会话使用
-    setu_save: Union[bool, str] = (
-        False  # 保存图片的路径, 默认False, 填.env时候希望收到的是字符串而不是True
-    )
+    setu_save: Union[
+        bool, str
+    ] = False  # 保存图片的路径, 默认False, 填.env时候希望收到的是字符串而不是True
     # 数据库路径, 默认使用github的地址
-    database_path: str = (
-        "https://raw.githubusercontent.com/Special-Week/nonebot_plugin_setu4/main/nonebot_plugin_setu4/resource/lolicon.db"
-    )
+    database_path: str = "https://raw.githubusercontent.com/Special-Week/nonebot_plugin_setu4/main/nonebot_plugin_setu4/resource/lolicon.db"
 
     setu_cd: int = 30  # 冷却时间
     setu_withdraw_time: int = 100  # 撤回时间
@@ -29,17 +27,12 @@ class Config(BaseSettings):
 
     setu_nsfw_path: Union[bool, str] = False
     setu_sfw_path: Union[bool, str] = False
-    scientific_agency: Union[None, str] = None  # 科学上网代理地址
+    scientific_agency: Optional[str] = None  # 科学上网代理地址
     setu_quality: List[int] = [5, 75]
     sfw_withdraw: bool = True
 
-    class Config:
-        extra = "ignore"
 
-
-# 实例化配置对象
-config = Config.parse_obj(get_driver().config)
-
+config = parse_obj_as(Config, get_driver().config.dict())
 
 # 规范取值范围
 config.setu_cd = max(0, config.setu_cd)  # setu_cd不能小于0
@@ -69,6 +62,3 @@ except Exception as e:
     config.setu_nsfw_path = False
     config.setu_sfw_path = False
     config.setu_save = False
-
-
-print(config)

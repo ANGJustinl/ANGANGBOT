@@ -99,7 +99,7 @@ class GetData:
         if db_data == []:
             raise ValueError(f"图库中没有搜到关于{keywords}的图。")
         # 并发下载图片
-        async with AsyncClient(proxies=config.scientific_agency) as client:
+        async with AsyncClient(proxy=config.scientific_agency) as client:
             tasks = [
                 self.pic(setu, quality, client, pm.read_proxy()) for setu in db_data
             ]

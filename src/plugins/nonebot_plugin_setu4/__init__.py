@@ -1,17 +1,14 @@
-# https://github.com/Special-Week/nonebot_plugin_setu4
 import contextlib
 from re import I
 
 from nonebot import on_command, on_regex
-from nonebot.adapters.onebot.v11 import GROUP, PRIVATE_FRIEND
 from nonebot.permission import SUPERUSER
+from nonebot.plugin import PluginMetadata
 
 from .mamager_handle import manager_handle
 from .send_setu import send_setu
 
 with contextlib.suppress(Exception):
-    from nonebot.plugin import PluginMetadata
-
     __plugin_meta__ = PluginMetadata(
         name="setu4",
         description="内置数据库的setu插件, 尝试降低因为风控发不出图的概率",
@@ -21,20 +18,17 @@ with contextlib.suppress(Exception):
         supported_adapters={"~onebot.v11"},
         extra={
             "author": "Special-Week",
-            "version": "0.13.114514",
+            "version": "0.16.114514",
             "priority": 10,
         },
     )
 
 
 # 命令正则表达式
-setu_regex: str = (
-    r"^(setu|色图|涩图|想色色|来份色色|来份色图|想涩涩|多来点|来点色图|来张setu|来张色图|来点色色|色色|涩涩)\s?([x|✖️|×|X|*]?\d+[张|个|份]?)?\s?(r18)?\s?(.*)?"
-)
+setu_regex: str = r"^(setu|色图|涩图|想色色|来份色色|来份色图|想涩涩|多来点|来点色图|来张setu|来张色图|来点色色|色色|涩涩)\s?([x|✖️|×|X|*]?\d+[张|个|份]?)?\s?(r18)?\s?(.*)?"
 on_regex(
     setu_regex,
     flags=I,
-    permission=PRIVATE_FRIEND | GROUP,
     priority=20,
     block=True,
     handlers=[send_setu.setu_handle],
