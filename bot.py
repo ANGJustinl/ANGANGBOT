@@ -13,6 +13,8 @@ driver.register_adapter(ONEBOT_V11Adapter)
 nonebot.load_from_toml("pyproject.toml")
 nonebot.load_plugins("src/plugins")
 
+logger.add("log/error.log", level="ERROR", rotation="1 week")
+logger.add("log/info.log", level="INFO", rotation="10 hour")
 
 logger.success(
     "\n"

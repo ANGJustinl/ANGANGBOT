@@ -62,7 +62,7 @@ m2 = on_command("mature2", aliases={"r18roll2"}, priority=5, block=True)
 
 
 @get_random_wallpaper.handle()
-async def _handle(matcher: Matcher, event: MessageEvent):
+async def _(matcher: Matcher, event: MessageEvent):
     user_id = event.user_id
     if not limiter_default.check(user_id):
         left_time = limiter_default.left_time(user_id)
@@ -83,10 +83,10 @@ async def _handle(matcher: Matcher, event: MessageEvent):
             "tx风控了...", at_sender=True
         )
     else:
-        get_random_wallpaper.finish()
+        await get_random_wallpaper.finish()
 
 @get_random_wallpapers.handle()
-async def _handle(matcher: Matcher, event: MessageEvent):
+async def _(matcher: Matcher, event: MessageEvent):
     user_id = event.user_id
     if not limiter_default.check(user_id):
         left_time = limiter_default.left_time(user_id)
@@ -132,7 +132,7 @@ async def get_random_wallpapers_number(bot: Bot, event: MessageEvent, number: in
         await get_random_wallpapers.finish()
 
 @mature.handle()
-async def _handle(matcher: Matcher, event: MessageEvent, bot: Bot):
+async def _(matcher: Matcher, event: MessageEvent, bot: Bot):
     await mature.finish("暂时关闭")
 '''    user_id = event.user_id
     # if not limiter.check(user_id):
@@ -157,7 +157,7 @@ async def _handle(matcher: Matcher, event: MessageEvent, bot: Bot):
         )'''
 
 @re.handle()
-async def _handle(event: MessageEvent):
+async def _(event: MessageEvent):
     user_id = event.user_id
     if not limiter_default.check(user_id):
         left_time = limiter_default.left_time(user_id)
@@ -177,10 +177,10 @@ async def _handle(event: MessageEvent):
     except Exception as e:
         await re.finish("tx风控了..." + str(e))
     else:
-        re.finish()
+        await re.finish()
 
 @food.handle()
-async def _handle(matcher: Matcher, event: MessageEvent):
+async def _(matcher: Matcher, event: MessageEvent):
     user_id = event.user_id
     if not limiter_default.check(user_id):
         left_time = limiter_default.left_time(user_id)
@@ -193,7 +193,7 @@ async def _handle(matcher: Matcher, event: MessageEvent):
     await food.finish(MessageSegment.image(file=url, cache=False), at_sender=True)
 
 @daily.handle()
-async def _handle():
+async def _():
     today = datetime.now().strftime("%Y-%m-%d")
     filepath = f"data/daily/{today}.txt"
     if os.path.exists(filepath):
@@ -206,12 +206,12 @@ async def _handle():
         await daily.finish("今日新闻未获取到", at_sender=True)
 
 @msn.handle()
-async def _handle():
+async def _():
     url = await get_redirect_url("https://api.vvhan.com/api/bing?rand=sj&size=1920x1680")
     await msn.finish(MessageSegment.image(file=url, cache=False), at_sender=True)
 
 @sese.handle()
-async def _handle(matcher: Matcher, event: MessageEvent):
+async def _(matcher: Matcher, event: MessageEvent):
     url = await get_redirect_url("https://api.vvhan.com/api/girl")
 
     user_id = event.user_id
@@ -226,7 +226,7 @@ async def _handle(matcher: Matcher, event: MessageEvent):
     await sese.finish(MessageSegment.image(file=url, cache=False), at_sender=True)
 
 @m2.handle()
-async def _handle(matcher: Matcher, event: MessageEvent, bot: Bot):
+async def _(matcher: Matcher, event: MessageEvent, bot: Bot):
     user_id = event.user_id
     if not limiter_loong.check(user_id):
         left_time = limiter_loong.left_time(user_id)

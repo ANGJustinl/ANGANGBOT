@@ -10,6 +10,10 @@ set.json
 setu_perm_cfg.json
 .idea
 
+# Ob11
+gocq/
+napcat/data/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
